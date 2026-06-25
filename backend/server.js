@@ -11,6 +11,9 @@ import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
+const DB_RETRY_INTERVAL_MS = 30000;
+
+let lastMongoError = null;
 
 app.use(cors({ origin: CLIENT_ORIGIN }));
 app.use(express.json({ limit: '2mb' }));
@@ -33,6 +36,7 @@ app.get('/api/health', (_req, res) => {
     ok: true,
     service: 'ResumeIQ API',
     database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+    mongoError: mongoose.connection.readyState === 1 ? null : lastMongoError,
   });
 });
 
@@ -47,7 +51,19 @@ app.listen(PORT, () => {
   console.log(`ResumeIQ API running on http://localhost:${PORT}`);
 });
 
-connectDB()
-  .catch((error) => {
+async function connectWithRetry() {
+  if (mongoose.connection.readyState === 1 || mongoose.connection.readyState === 2) {
+    return;
+  }
+
+  try {
+    await connectDB();
+    lastMongoError = null;
+  } catch (error) {
+    lastMongoError = error.message;
     console.error('Failed to connect to MongoDB:', error.message);
-  });
+    setTimeout(connectWithRetry, DB_RETRY_INTERVAL_MS);
+  }
+}
+
+connectWithRetry();
