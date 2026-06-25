@@ -12,8 +12,16 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
 const DB_RETRY_INTERVAL_MS = 30000;
+const DB_CONNECTING_TIMEOUT_MS = 20000;
+const DB_STATES = {
+  0: 'disconnected',
+  1: 'connected',
+  2: 'connecting',
+  3: 'disconnecting',
+};
 
 let lastMongoError = null;
+let lastMongoAttemptAt = null;
 
 app.use(cors({ origin: CLIENT_ORIGIN }));
 app.use(express.json({ limit: '2mb' }));
@@ -32,11 +40,14 @@ app.get('/favicon.ico', (_req, res) => {
 });
 
 app.get('/api/health', (_req, res) => {
+  const database = DB_STATES[mongoose.connection.readyState] || 'unknown';
+
   res.json({
     ok: true,
     service: 'ResumeIQ API',
-    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
-    mongoError: mongoose.connection.readyState === 1 ? null : lastMongoError,
+    database,
+    mongoError: database === 'connected' ? null : lastMongoError,
+    mongoLastAttemptAt: lastMongoAttemptAt,
   });
 });
 
@@ -52,11 +63,29 @@ app.listen(PORT, () => {
 });
 
 async function connectWithRetry() {
-  if (mongoose.connection.readyState === 1 || mongoose.connection.readyState === 2) {
+  if (mongoose.connection.readyState === 1) {
+    return;
+  }
+
+  if (mongoose.connection.readyState === 2) {
+    const attemptAge = lastMongoAttemptAt ? Date.now() - new Date(lastMongoAttemptAt).getTime() : 0;
+
+    if (attemptAge < DB_CONNECTING_TIMEOUT_MS) {
+      setTimeout(connectWithRetry, DB_RETRY_INTERVAL_MS);
+      return;
+    }
+
+    lastMongoError = 'MongoDB connection attempt timed out';
+    await mongoose.disconnect().catch(() => {});
+  }
+
+  if (mongoose.connection.readyState === 3) {
+    setTimeout(connectWithRetry, DB_RETRY_INTERVAL_MS);
     return;
   }
 
   try {
+    lastMongoAttemptAt = new Date().toISOString();
     await connectDB();
     lastMongoError = null;
   } catch (error) {
