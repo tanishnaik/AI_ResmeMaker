@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Template Gallery | ResumeIQ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .template-preview-zoom {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .template-card:hover .template-preview-zoom {
+            transform: scale(1.1) translateY(-10px);
+        }
+        .active-ring {
+            box-shadow: 0 0 0 4px rgba(69, 30, 187, 0.1), 0 0 0 2px rgba(69, 30, 187, 1);
+        }
+        .sidebar-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        body {
+            background-color: #f8f9ff;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .font-geist {
+            font-family: 'Geist', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#1c0062",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#451ebb",
+                        "surface": "#f8f9ff",
+                        "inverse-primary": "#cabeff",
+                        "on-primary-fixed-variant": "#4723be",
+                        "surface-variant": "#d3e4fe",
+                        "primary-container": "#5d3fd3",
+                        "on-tertiary-fixed": "#191c1e",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "primary-fixed": "#e6deff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#414546",
+                        "primary-fixed-dim": "#cabeff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-container": "#d8ceff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#484554",
+                        "secondary": "#565e74",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#797586",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-background": "#0b1c30",
+                        "secondary-container": "#dae2fd",
+                        "outline-variant": "#c9c4d7",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#d2d4d6",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed": "#e0e3e5",
+                        "tertiary-container": "#595c5e",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#6042d6",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-container": "#5c647a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit-base": "8px",
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 docked full-width top-0 sticky backdrop-blur-xl border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">ResumeIQ</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-label-md text-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary font-label-md text-label-md" href="#">Templates</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-label-md text-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Tracking</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">account_circle</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold scale-95 active:scale-90 transition-transform">Build Resume</button>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-18 bg-surface-container-lowest dark:bg-surface-container-low border-r border-outline-variant/20 p-4 gap-4 z-40">
+<div class="flex items-center gap-3 mb-6 px-2">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional user avatar for a high-end tech executive, featuring soft studio lighting, a minimalist blurred office background, and a sharp, clean aesthetic that matches the Indigo and Slate color palette of the ResumeIQ platform. The subject is smiling warmly, projecting confidence and approachability in a modern digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6_IpxkUuhLmnSH1EBhK2oryqJ4qtdcM0pGo7JMtoD7N-FRnjFZ51OreLzbZqFXlDIpWGw_3ms5Oda53DqsSEvQUa-FX7cxIPzOFYFwRjQ6C2YZ88b_MyyjKYN5l6XMNCMYZAky7W9xXCp5Axym-yK9VJ2b6ZjC300w4mfCljUrHuzpIzSVu3r1pcuYHdsk0KkDRvoXBiGg2HbJPXIZexw2CAmBnVphYzm9dVjd5AIiLVrRkX0GrfzdIE8TSKEmSrDQyEsTLmg70Re"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Resume Workspace</p>
+<p class="text-xs text-on-surface-variant">AI-Powered Drafting</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all font-label-md text-label-md translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">edit_note</span> Editor
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">auto_awesome</span> AI Assistant
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-xl font-bold font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">grid_view</span> Templates
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span> Analytics
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+                </a>
+</nav>
+<div class="mt-auto p-4 bg-primary/5 rounded-2xl border border-primary/10">
+<p class="text-xs font-bold text-primary mb-2">PRO PLAN ACTIVE</p>
+<p class="text-xs text-on-surface-variant mb-4">Access all premium AI features and templates.</p>
+<button class="w-full py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-primary-container transition-colors">Upgrade to Pro</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 p-margin-mobile md:p-margin-desktop bg-surface">
+<!-- Header Section -->
+<header class="max-w-container-max mx-auto mb-stack-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Template Gallery</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Expertly crafted, ATS-friendly templates designed to bypass algorithms and impress hiring managers. Choose your foundation.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-label-md font-label-md hover:bg-surface-variant/30 transition-all">
+<span class="material-symbols-outlined text-sm">filter_list</span> Industry
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-label-md font-label-md hover:bg-surface-variant/30 transition-all">
+<span class="material-symbols-outlined text-sm">stairs</span> Experience
+                        </button>
+</div>
+</div>
+</header>
+<!-- Template Grid -->
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Template Card: Modern (Selected) -->
+<div class="template-card relative group flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden active-ring border border-primary/20 transition-all">
+<div class="absolute top-4 right-4 z-10">
+<div class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span> SELECTED
+                        </div>
+</div>
+<div class="aspect-[3/4] overflow-hidden bg-slate-100">
+<div class="template-preview-zoom w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A zoomed-in header preview of a modern resume template featuring a clean split-column layout. The left sidebar is a soft Indigo tint, while the main body is crisp white. Bold, minimalist sans-serif typography is used for the name and section headers. High-quality whitespace and precise alignment evoke a professional and technologically advanced feel, suitable for a UI/UX designer or software engineer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEuynwjx3zZnPFEQXbvSrEcBa2OpIrcoyrsweOFWr4iMugC_vBzocHzN-5BvInZfmJ1HQaeDRU1Mb_h7D8pBu06JucSGqx44VeijrKeUKf0n5oMFsqsWZQ1J-_LT9vnhxbZH1aUJNoyX89Y3IZtPv5pp27B6fXqXEc6WRox4ay5Y_P5FyOx2PWMXr7g_b_ws1II68qfShAh8LgeLQIoGXRJH_paJi_-ctF8acv1BejyWP_oaAyHng4qJdt8pLYHHyQJIbq4wurGjTj"/>
+<!-- Overlay for hover actions -->
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<button class="bg-white text-primary px-6 py-3 rounded-full font-bold shadow-xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined">edit</span> Customize Template
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Innovator</h3>
+<div class="flex gap-1">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded font-bold uppercase">Modern</span>
+</div>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-4">Best for Tech, Product, and Creative roles requiring a bold identity.</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-[11px] font-bold text-on-surface-variant/70 uppercase tracking-wider">ATS Score: 98/100</span>
+</div>
+</div>
+</div>
+<!-- Template Card: Professional -->
+<div class="template-card group flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/30 hover:border-primary/40 transition-all hover:shadow-xl">
+<div class="aspect-[3/4] overflow-hidden bg-slate-50">
+<div class="template-preview-zoom w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A detailed macro view of a professional, traditional resume header. Features elegant serif typography for the name, a subtle horizontal divider in light Slate, and perfectly balanced margins. The lighting is bright and airy, emphasizing a pristine white paper texture and a highly authoritative, corporate aesthetic. Designed for senior executives or legal professionals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl56ezUCPanYQH-uxIqfdGkeXsIJdg-nFD740rwSChhuWaNRFlhqP-hLChmfK0T6SKnxXV-tBu1juLREK_c_KO8hG-wXNUnmSsDk_t2JSOhJIl00otVvs7CbU6TM_Ds9wSE5vQmbB8InqB6Neicrct3xvFD2aBOPbSlUOSxnUQChjY1_WHv51HqbCED9SQB2AWeZe49-csuOXbN2_8yeA6pSrc4BolgPMMJEIHX1272qReEoAgotdXmFOP-iOt1FX6gcvusP66Q3Ch"/>
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<button class="bg-primary text-white px-6 py-3 rounded-full font-bold shadow-xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined">visibility</span> Preview Layout
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Executive Elite</h3>
+<div class="flex gap-1">
+<span class="bg-on-surface/5 text-on-surface-variant text-[10px] px-2 py-0.5 rounded font-bold uppercase">Professional</span>
+</div>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-4">A high-trust layout for Finance, Legal, and Corporate Management.</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-[11px] font-bold text-on-surface-variant/70 uppercase tracking-wider">ATS Score: 100/100</span>
+</div>
+</div>
+</div>
+<!-- Template Card: Creative -->
+<div class="template-card group flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/30 hover:border-primary/40 transition-all hover:shadow-xl">
+<div class="aspect-[3/4] overflow-hidden bg-indigo-50">
+<div class="template-preview-zoom w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A vibrant and creative resume template showcase focusing on asymmetrical grid elements and a bold splash of Indigo color. The design uses organic shapes and modern typography to display a skill-set radar chart and a clean experience timeline. The overall mood is energetic and visually stimulating, specifically tailored for art directors and marketing specialists in the digital age." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD6Qdf3bqHDXexuz65AlZzzK25oWIAFwmUBJOkAzz9vbH7EXQtnI4Ar4xZgydvfEgBCwOdSYN0LLnaIe52vo85PitSov1LHH7DJkZB2LexfnLmxlTp8J1K5D1BfyjOrQXS50YGeHqV2WSa91Cxgg9XPQebXlUTU3hDRONPK_7QCZTDQmpU1f-5B1Yg2Hcs5wpxY_E9t4-S05rxwtpSUg8CrqnaWMzVcl4_mgjGofsbwqFbjU5Yslsulhx1ejwAyRadv9DqnfNguaUL"/>
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<button class="bg-primary text-white px-6 py-3 rounded-full font-bold shadow-xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined">visibility</span> Preview Layout
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Visionary</h3>
+<div class="flex gap-1">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded font-bold uppercase">Creative</span>
+</div>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-4">Showcase your portfolio and personality with this asymmetric design.</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+<span class="text-[11px] font-bold text-on-surface-variant/70 uppercase tracking-wider">ATS Score: 85/100</span>
+</div>
+</div>
+</div>
+<!-- Template Card: Minimalist -->
+<div class="template-card group flex flex-col bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/30 hover:border-primary/40 transition-all hover:shadow-xl">
+<div class="aspect-[3/4] overflow-hidden bg-slate-50">
+<div class="template-preview-zoom w-full h-full relative">
+<img class="w-full h-full object-cover" data-alt="A minimalist resume template header featuring ultra-clean typography and massive whitespace. The name is set in a light weight sans-serif font, with section titles defined by subtle uppercase labels. There are no borders or boxes, just pure, organized text that conveys sophisticated simplicity. The aesthetic is serene, professional, and contemporary, emphasizing clarity above all else." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuRQ97peufbs8CBX77wDDvB-v6t6qOZEndT_mTGtpRCmRLPQtnSnkQjXlXG3l0gFVrWbzJjyetscZF5uhPZUCcygyvCXgqtsYEhYMWobluifVgkxzuhH-obERXm1HkBSV-w8m8SXzJjjSQN1JUwnM8vLErKGvQPxpKajFkW8saBIVD6LlefhYHbf8K2e-gBNUcyJy2D5i2uiGE5vKNnCWiFrNkE82SOjsczdbcir8X9X3mzKJ45oaNMmqR8k90EZkGVa0LTCfYqKbt"/>
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<button class="bg-primary text-white px-6 py-3 rounded-full font-bold shadow-xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+<span class="material-symbols-outlined">visibility</span> Preview Layout
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Minimalist Zen</h3>
+<div class="flex gap-1">
+<span class="bg-on-surface/5 text-on-surface-variant text-[10px] px-2 py-0.5 rounded font-bold uppercase">Minimalist</span>
+</div>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-4">Focus purely on content with this distillation of professional data.</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-[11px] font-bold text-on-surface-variant/70 uppercase tracking-wider">ATS Score: 95/100</span>
+</div>
+</div>
+</div>
+<!-- Empty State / Suggestion Card -->
+<div class="flex flex-col items-center justify-center bg-surface-container-high/30 rounded-3xl border-2 border-dashed border-outline-variant/50 p-12 text-center group cursor-pointer hover:border-primary/50 transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">auto_fix_high</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Custom AI Layout</h3>
+<p class="text-label-sm text-on-surface-variant max-w-[200px]">Let ResumeIQ generate a layout based on your specific job description.</p>
+<button class="mt-6 px-6 py-2 bg-on-surface text-surface rounded-full text-xs font-bold hover:bg-primary transition-colors">Generate Unique UI</button>
+</div>
+</div>
+</main>
+</div>
+<!-- AI Suggestion Chip (Floating) -->
+<div class="fixed bottom-8 right-8 z-40">
+<div class="glass-card p-4 rounded-2xl shadow-2xl border border-primary/20 max-w-sm flex items-start gap-4 animate-bounce-subtle">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-tighter">AI Suggestion</p>
+<p class="text-sm text-on-surface font-medium leading-tight">"The Innovator" template matches your Product Management experience best.</p>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors">close</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface full-width border-t border-outline-variant">
+<div class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-headline-md font-headline-md text-primary">ResumeIQ</span>
+<p class="text-on-surface-variant/80 font-label-sm text-label-sm">© 2024 ResumeIQ AI. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm" href="#">API Docs</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Filter button toggles
+        const filterButtons = document.querySelectorAll('header button');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('bg-primary', 'text-white'));
+                btn.classList.add('bg-primary', 'text-white');
+            });
+        });
+
+        // Template Selection Simulation
+        const templateCards = document.querySelectorAll('.template-card');
+        templateCards.forEach(card => {
+            card.addEventListener('click', () => {
+                templateCards.forEach(c => {
+                    c.classList.remove('active-ring', 'border-primary/20');
+                    c.classList.add('border-outline-variant/30');
+                    const label = c.querySelector('.bg-primary.text-white');
+                    if (label) label.remove();
+                });
+                
+                card.classList.add('active-ring', 'border-primary/20');
+                card.classList.remove('border-outline-variant/30');
+                
+                // Add selected badge dynamically
+                const badge = document.createElement('div');
+                badge.className = 'absolute top-4 right-4 z-10';
+                badge.innerHTML = `
+                    <div class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                        <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span> SELECTED
+                    </div>
+                `;
+                card.prepend(badge);
+            });
+        });
+    </script>
+</body></html>

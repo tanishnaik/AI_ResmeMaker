@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeIQ - AI Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .resume-shadow {
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c9c4d7;
+            border-radius: 10px;
+        }
+        .active-glow {
+            box-shadow: 0 0 0 2px #451ebb33;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#1c0062",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#451ebb",
+                        "surface": "#f8f9ff",
+                        "inverse-primary": "#cabeff",
+                        "on-primary-fixed-variant": "#4723be",
+                        "surface-variant": "#d3e4fe",
+                        "primary-container": "#5d3fd3",
+                        "on-tertiary-fixed": "#191c1e",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "primary-fixed": "#e6deff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#414546",
+                        "primary-fixed-dim": "#cabeff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-container": "#d8ceff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#484554",
+                        "secondary": "#565e74",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#797586",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-background": "#0b1c30",
+                        "secondary-container": "#dae2fd",
+                        "outline-variant": "#c9c4d7",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#d2d4d6",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed": "#e0e3e5",
+                        "tertiary-container": "#595c5e",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#6042d6",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-container": "#5c647a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit-base": "8px",
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-hidden h-screen flex">
+<!-- SIDE NAVBAR (Predicted Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant/20 flex flex-col p-4 gap-4 z-50">
+<div class="flex items-center gap-3 px-2 mb-4">
+<span class="font-headline-md text-headline-md font-extrabold text-primary">ResumeIQ</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container rounded-xl font-bold transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-md text-label-md">Editor</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-md text-label-md">AI Assistant</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-label-md">Templates</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container rounded-2xl">
+<p class="font-label-sm text-label-sm text-on-surface mb-2">Workspace Strength</p>
+<div class="w-full h-1.5 bg-outline-variant rounded-full overflow-hidden">
+<div class="bg-primary w-3/4 h-full"></div>
+</div>
+<button class="mt-4 w-full py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:shadow-lg transition-all active:scale-95">Upgrade to Pro</button>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 ml-64 flex flex-col h-screen">
+<!-- TOP NAV BAR (Predicted Component) -->
+<header class="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 sticky top-0 z-40 flex justify-between items-center w-full px-8 py-4">
+<div class="flex items-center gap-8">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Untitled Resume</h1>
+<nav class="hidden md:flex gap-6">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary" href="#">Editor</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Tracking</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:shadow-md active:scale-95 transition-all">Build Resume</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a corporate professional with a clean, well-lit background, styled with minimalist and modern business aesthetics. The subject has a confident and approachable expression, wearing high-quality professional attire in a palette of dark charcoal and crisp whites to match the UI's sophisticated atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC80FIP8QdSiKN21Gck4LDemxkabeVi_pnm82LlBZSrrkLiNxdOiEauZQtloNQqRzIelTpBqZQump2_swRGmPxiHHzL_2kMcE0tHluGjMhMPdRjrid8iTdSkem9n1r9xaKKKyLT1CXTmCU1XbOXPKfh3kMpfF9gUBreHyb1DB3F1y7HtyNN9tg_CGSrPF6Wl6QyfHRdFb093Sokx7pMM4IOH2zhlRbQ3qg2GJQUzwq8apr_vPF056NQwKEKvPsxGH3MzfjwjApLRZZ8"/>
+</div>
+</div>
+</header>
+<!-- SPLIT SCREEN WORKSPACE -->
+<div class="flex-1 flex overflow-hidden">
+<!-- LEFT PANEL: EDITOR FORM -->
+<section class="w-[45%] flex flex-col border-r border-outline-variant/30 bg-surface-container-lowest relative">
+<div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+<div class="max-w-xl mx-auto space-y-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Work Experience</h2>
+<p class="font-body-md text-label-md text-on-surface-variant">Detail your professional history to let our AI optimize your impact.</p>
+</div>
+<!-- EXPERIENCE ENTRY CARD -->
+<div class="group relative p-6 bg-surface border border-outline-variant/30 rounded-2xl hover:border-primary/50 transition-all">
+<div class="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity cursor-grab">
+<span class="material-symbols-outlined text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Job Title</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-1 py-1 font-body-md text-on-surface outline-none transition-all" type="text" value="Senior Product Designer"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Company</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-1 py-1 font-body-md text-on-surface outline-none transition-all" type="text" value="TechFlow Solutions"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Description</label>
+<textarea class="w-full bg-transparent border border-outline-variant/30 rounded-xl focus:border-primary focus:ring-0 p-3 font-body-md text-on-surface outline-none transition-all resize-none" rows="4">Led the redesign of the core user dashboard, resulting in a 25% increase in user engagement and streamlining the onboarding process for 50k+ monthly active users.</textarea>
+</div>
+<div class="flex justify-between items-center pt-2">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary/5 border border-primary/20 text-primary rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'opsz' 16">auto_awesome</span>
+                                            Engagement focus
+                                        </span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary/5 text-primary border border-primary/20 hover:bg-primary/10 rounded-full font-label-md text-label-md transition-all active:scale-95 group/ai">
+<span class="material-symbols-outlined text-sm group-hover/ai:rotate-12 transition-transform" data-icon="auto_awesome">auto_awesome</span>
+                                        AI Enhance
+                                    </button>
+</div>
+</div>
+</div>
+<!-- EXPERIENCE ENTRY CARD 2 -->
+<div class="group relative p-6 bg-surface border border-outline-variant/30 rounded-2xl hover:border-primary/50 transition-all">
+<div class="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity cursor-grab">
+<span class="material-symbols-outlined text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Job Title</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-1 py-1 font-body-md text-on-surface outline-none transition-all" type="text" value="UX Designer"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Company</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-1 py-1 font-body-md text-on-surface outline-none transition-all" type="text" value="Creativ Studio"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant px-1">Description</label>
+<textarea class="w-full bg-transparent border border-outline-variant/30 rounded-xl focus:border-primary focus:ring-0 p-3 font-body-md text-on-surface outline-none transition-all resize-none" rows="3">Worked on mobile app interfaces and conducted user research sessions to improve accessibility scores.</textarea>
+</div>
+<div class="flex justify-end pt-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary/5 text-primary border border-primary/20 hover:bg-primary/10 rounded-full font-label-md text-label-md transition-all active:scale-95 group/ai">
+<span class="material-symbols-outlined text-sm group-hover/ai:rotate-12 transition-transform" data-icon="auto_awesome">auto_awesome</span>
+                                        AI Enhance
+                                    </button>
+</div>
+</div>
+</div>
+<button class="w-full py-4 border-2 border-dashed border-outline-variant/50 rounded-2xl text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all font-label-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                            Add Experience
+                        </button>
+</div>
+</div>
+<!-- AI CHAT BOTTOM INTERFACE -->
+<div class="p-6 border-t border-outline-variant/30 glass-panel">
+<div class="max-w-xl mx-auto">
+<div class="mb-4 flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary-container text-sm" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="bg-surface border border-outline-variant/20 p-3 rounded-2xl rounded-tl-none">
+<p class="font-label-sm text-label-sm text-on-surface">"Make my experience sound more leadership-focused"</p>
+</div>
+</div>
+<div class="relative">
+<input class="w-full py-3 px-12 bg-surface-container rounded-full border-none focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-on-surface-variant/50 font-body-md transition-all" placeholder="Ask AI to edit your resume..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary" data-icon="sparkles" style="font-variation-settings: 'FILL' 1">auto_awesome</span>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-primary text-on-primary rounded-full flex items-center justify-center hover:shadow-lg transition-all active:scale-90">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT PANEL: RESUME PREVIEW -->
+<section class="flex-1 bg-surface-container-low overflow-y-auto p-12 custom-scrollbar flex justify-center items-start">
+<!-- THE DOCUMENT STAGE -->
+<div class="w-[800px] bg-white resume-shadow min-h-[1132px] p-16 origin-top transform scale-95 hover:scale-100 transition-transform duration-500">
+<!-- RESUME CONTENT -->
+<header class="mb-12">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 uppercase mb-2">Alex Rivera</h2>
+<div class="flex gap-4 text-slate-500 font-label-sm text-xs">
+<span>alex.rivera@email.com</span>
+<span>•</span>
+<span>+1 (555) 0123 4567</span>
+<span>•</span>
+<span>New York, NY</span>
+</div>
+</header>
+<div class="space-y-10">
+<section>
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest border-b border-slate-100 pb-2 mb-4">Professional Profile</h3>
+<p class="text-slate-700 text-sm leading-relaxed">
+                                Results-driven Senior Product Designer with over 8 years of experience in creating user-centric digital experiences. Proven track record of increasing engagement by 25% and leading cross-functional teams to deliver high-impact features.
+                            </p>
+</section>
+<section>
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest border-b border-slate-100 pb-2 mb-4">Experience</h3>
+<div class="space-y-8">
+<div class="relative">
+<div class="flex justify-between items-baseline mb-1">
+<h4 class="font-bold text-slate-900 text-base">Senior Product Designer</h4>
+<span class="text-xs text-slate-500 font-medium">2021 — PRESENT</span>
+</div>
+<p class="text-slate-600 text-sm font-medium mb-3">TechFlow Solutions</p>
+<ul class="space-y-2 list-disc list-outside ml-4 text-slate-700 text-sm">
+<li>Led the redesign of the core user dashboard, resulting in a 25% increase in user engagement.</li>
+<li>Streamlined the onboarding process for 50k+ monthly active users, reducing time-to-first-value by 40%.</li>
+<li>Mentored a team of 4 junior designers, establishing a new internal design system and component library.</li>
+</ul>
+<!-- LIVE UPDATING INDICATOR -->
+<div class="absolute -right-4 top-0 w-1 h-full bg-primary/20 rounded-full animate-pulse"></div>
+</div>
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<h4 class="font-bold text-slate-900 text-base">UX Designer</h4>
+<span class="text-xs text-slate-500 font-medium">2018 — 2021</span>
+</div>
+<p class="text-slate-600 text-sm font-medium mb-3">Creativ Studio</p>
+<ul class="space-y-2 list-disc list-outside ml-4 text-slate-700 text-sm">
+<li>Optimized mobile app interfaces which led to a 15% increase in App Store ratings.</li>
+<li>Conducted over 50+ user research sessions and synthesized findings for executive presentations.</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest border-b border-slate-100 pb-2 mb-4">Expertise</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-xs font-medium">Product Design</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-xs font-medium">User Research</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-xs font-medium">Design Systems</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-xs font-medium">Figma</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-xs font-medium">Stakeholder Management</span>
+</div>
+</section>
+</div>
+</div>
+</section>
+</div>
+<!-- AI PROGRESS BAR -->
+<div class="fixed top-0 left-64 right-0 h-1 z-50">
+<div class="w-full h-full bg-slate-200">
+<div class="h-full bg-primary w-[85%] transition-all duration-1000 shadow-[0_0_8px_rgba(69,30,187,0.5)]"></div>
+</div>
+<div class="absolute top-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur px-3 py-1 rounded-full border border-primary/20 shadow-sm flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">AI Syncing Changes...</span>
+</div>
+</div>
+</main>
+<!-- FOOTER (Predicted Component - suppressed as per mandate for task-focused workspace but adding copyright for brand integrity) -->
+<footer class="hidden">
+<p>© 2024 ResumeIQ AI. All rights reserved.</p>
+</footer>
+<script>
+        // Simple micro-interactions for the editor
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.classList.add('active-glow');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.classList.remove('active-glow');
+            });
+        });
+
+        // Simulating the "live" update effect
+        const textareas = document.querySelectorAll('textarea');
+        textareas.forEach(ta => {
+            ta.addEventListener('input', () => {
+                const syncBadge = document.querySelector('.animate-ping').parentElement;
+                syncBadge.classList.remove('opacity-0');
+                syncBadge.classList.add('opacity-100');
+                
+                setTimeout(() => {
+                    syncBadge.classList.add('opacity-0');
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

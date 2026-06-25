@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeIQ - Final Review & Export</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#1c0062",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#451ebb",
+                        "surface": "#f8f9ff",
+                        "inverse-primary": "#cabeff",
+                        "on-primary-fixed-variant": "#4723be",
+                        "surface-variant": "#d3e4fe",
+                        "primary-container": "#5d3fd3",
+                        "on-tertiary-fixed": "#191c1e",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "primary-fixed": "#e6deff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#414546",
+                        "primary-fixed-dim": "#cabeff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-container": "#d8ceff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#484554",
+                        "secondary": "#565e74",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#797586",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-background": "#0b1c30",
+                        "secondary-container": "#dae2fd",
+                        "outline-variant": "#c9c4d7",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#d2d4d6",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed": "#e0e3e5",
+                        "tertiary-container": "#595c5e",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#6042d6",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-container": "#5c647a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit-base": "8px",
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "label-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .resume-page {
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .resume-page { box-shadow: none !important; margin: 0 !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar Implementation -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm docked full-width top-0 sticky z-50 no-print">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">ResumeIQ</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-label-md text-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-label-md text-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Templates</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary font-label-md text-label-md" href="#">Tracking</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="scale-95 active:scale-90 transition-transform flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:shadow-lg">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                    Download PDF
+                </button>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</div>
+</div>
+</header>
+<main class="relative min-h-screen pt-stack-md pb-stack-lg">
+<!-- Floating Intelligence Sidebar (Toolbar) -->
+<aside class="fixed right-8 top-1/2 -translate-y-1/2 w-72 glass-panel border border-outline-variant/30 rounded-2xl p-6 shadow-xl z-40 hidden lg:flex flex-col gap-6 no-print">
+<div>
+<h3 class="font-headline-md text-label-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                    Appearance
+                </h3>
+<div class="space-y-6">
+<!-- Font Family -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Font Family</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-label-md focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+<option>Inter (Sans Serif)</option>
+<option>Geist (Modern Mono)</option>
+<option>Merriweather (Serif)</option>
+<option>Roboto (Neutral)</option>
+</select>
+</div>
+<!-- Color Theme -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Color Theme</label>
+<div class="flex gap-3">
+<button class="w-8 h-8 rounded-full bg-[#451ebb] ring-2 ring-offset-2 ring-primary transition-transform hover:scale-110" title="Indigo"></button>
+<button class="w-8 h-8 rounded-full bg-[#2d3436] ring-2 ring-offset-2 ring-transparent transition-transform hover:scale-110" title="Charcoal"></button>
+<button class="w-8 h-8 rounded-full bg-[#64748b] ring-2 ring-offset-2 ring-transparent transition-transform hover:scale-110" title="Slate"></button>
+<button class="w-8 h-8 rounded-full bg-[#059669] ring-2 ring-offset-2 ring-transparent transition-transform hover:scale-110" title="Forest"></button>
+</div>
+</div>
+<!-- Line Spacing -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Line Spacing</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="p-2 border border-outline-variant rounded-lg hover:border-primary text-label-sm">Tight</button>
+<button class="p-2 border border-primary bg-primary-container text-on-primary-container rounded-lg text-label-sm">Normal</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:border-primary text-label-sm">Loose</button>
+</div>
+</div>
+<!-- AI Suggestions Spark Chip -->
+<div class="pt-4 border-t border-outline-variant/30">
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-4">
+<div class="flex items-center gap-2 text-primary font-label-md mb-2">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+                                AI Content Check
+                            </div>
+<p class="text-label-sm text-on-surface-variant leading-relaxed">Your "Experience" section is 15% more impactful with current action verbs. Ready to export.</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface py-3 rounded-xl font-label-md transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">visibility_off</span>
+                Hide Editor
+            </button>
+</aside>
+<!-- The Document Stage -->
+<div class="max-w-[800px] mx-auto px-4 sm:px-0">
+<!-- Review Mode Badge -->
+<div class="mb-8 flex items-center justify-between no-print">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-sm rounded-full font-bold uppercase tracking-widest">Review Mode</span>
+<span class="text-on-surface-variant text-label-md">Last edited 2 mins ago</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full border border-outline-variant hover:bg-surface-variant/30 transition-all">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="p-2 rounded-full border border-outline-variant hover:bg-surface-variant/30 transition-all">
+<span class="material-symbols-outlined">zoom_out</span>
+</button>
+</div>
+</div>
+<!-- Resume Content -->
+<div class="resume-page bg-white p-[60px] min-h-[1100px] text-[#2d3436] rounded-sm relative overflow-hidden" id="resume-canvas">
+<!-- Watermark/Grid (Subtle decorative element) -->
+<div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- Header Section -->
+<header class="relative mb-12 border-b-2 border-primary pb-8">
+<h1 class="text-[42px] font-bold tracking-tight text-on-surface mb-2 leading-none">ALEXANDER R. VANCE</h1>
+<p class="text-primary font-semibold text-lg tracking-widest uppercase mb-4">Senior Product Designer & AI Orchestrator</p>
+<div class="flex flex-wrap gap-y-2 gap-x-6 text-on-surface-variant text-[14px]">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">mail</span> alex.vance@example.com</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">phone_iphone</span> +1 (555) 098-4321</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">location_on</span> San Francisco, CA</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">language</span> portfolio.vance.design</span>
+</div>
+</header>
+<!-- Summary Section -->
+<section class="mb-10">
+<h2 class="text-primary font-bold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+                        Professional Summary
+                    </h2>
+<p class="text-[15px] leading-relaxed text-on-surface-variant italic border-l-4 border-surface-variant pl-6">
+                        Forward-thinking Product Designer with over 8 years of experience building scalable design systems and AI-integrated user interfaces. Proven track record of reducing cognitive load for complex SaaS platforms. Expert in transforming abstract technical requirements into empathetic, human-centric experiences that drive 30%+ increases in user engagement.
+                    </p>
+</section>
+<!-- Experience Section -->
+<section class="mb-10">
+<h2 class="text-primary font-bold text-sm uppercase tracking-widest mb-6">Experience</h2>
+<div class="space-y-8">
+<div class="relative pl-6 border-l-2 border-surface-container">
+<div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-primary ring-4 ring-white"></div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-bold text-lg">Lead Product Designer</h3>
+<p class="text-on-surface-variant font-medium">NeuralLink Systems • Palo Alto, CA</p>
+</div>
+<span class="text-sm font-semibold text-on-surface-variant italic">2021 — PRESENT</span>
+</div>
+<ul class="list-none space-y-2 text-[14px] text-on-surface-variant">
+<li class="flex gap-2"><span>•</span> Spearheaded the redesign of the core dashboard, improving user task completion speed by 40% through advanced hierarchy and glassmorphism UI patterns.</li>
+<li class="flex gap-2"><span>•</span> Managed a team of 5 designers, establishing a cross-functional workflow with engineering that cut development handoff time by 25%.</li>
+<li class="flex gap-2"><span>•</span> Conceptualized and shipped "SmartFlow," an AI-driven workflow engine that automates 60% of manual data entry for enterprise clients.</li>
+</ul>
+</div>
+<div class="relative pl-6 border-l-2 border-surface-container">
+<div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-surface-container-highest ring-4 ring-white"></div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-bold text-lg">Senior Interaction Designer</h3>
+<p class="text-on-surface-variant font-medium">CloudFlow SaaS</p>
+</div>
+<span class="text-sm font-semibold text-on-surface-variant italic">2018 — 2021</span>
+</div>
+<ul class="list-none space-y-2 text-[14px] text-on-surface-variant">
+<li class="flex gap-2"><span>•</span> Developed a comprehensive design system adopted by 12 product squads, ensuring 100% brand consistency across mobile and desktop apps.</li>
+<li class="flex gap-2"><span>•</span> Led user research initiatives involving 50+ enterprise users to identify and resolve critical friction points in the onboarding journey.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Education & Skills (Side by Side) -->
+<div class="grid grid-cols-2 gap-12">
+<section>
+<h2 class="text-primary font-bold text-sm uppercase tracking-widest mb-4">Education</h2>
+<div>
+<h3 class="font-bold text-[15px]">MFA in Interaction Design</h3>
+<p class="text-sm text-on-surface-variant">School of Visual Arts (SVA), NY</p>
+<p class="text-xs text-on-surface-variant italic">Graduated with Honors</p>
+</div>
+<div class="mt-4">
+<h3 class="font-bold text-[15px]">BFA in Graphic Design</h3>
+<p class="text-sm text-on-surface-variant">Rhode Island School of Design (RISD)</p>
+</div>
+</section>
+<section>
+<h2 class="text-primary font-bold text-sm uppercase tracking-widest mb-4">Core Skills</h2>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[12px] rounded-md font-medium">Product Strategy</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[12px] rounded-md font-medium">Design Systems</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[12px] rounded-md font-medium">Figma (Advanced)</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[12px] rounded-md font-medium">React / Tailwind</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[12px] rounded-md font-medium">AI Prompting</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-[12px] rounded-md font-medium">User Research</span>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Implementation -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant full-width no-print">
+<div class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<div class="mb-4 md:mb-0">
+<span class="text-headline-md font-headline-md text-primary">ResumeIQ</span>
+<p class="text-on-surface-variant/80 font-label-sm text-label-sm mt-2">© 2024 ResumeIQ AI. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-on-surface-variant/80 hover:text-primary transition-colors font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">API Docs</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        // Simple Theme Color Switcher Logic
+        const colorButtons = document.querySelectorAll('button[title]');
+        const resumeCanvas = document.getElementById('resume-canvas');
+        const primaryElements = document.querySelectorAll('.text-primary, .border-primary, .bg-primary');
+
+        colorButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active rings
+                colorButtons.forEach(b => b.classList.replace('ring-primary', 'ring-transparent'));
+                btn.classList.replace('ring-transparent', 'ring-primary');
+
+                const selectedColor = btn.getAttribute('title');
+                let colorHex = '#451ebb'; // Default Indigo
+
+                if(selectedColor === 'Charcoal') colorHex = '#2d3436';
+                if(selectedColor === 'Slate') colorHex = '#64748b';
+                if(selectedColor === 'Forest') colorHex = '#059669';
+
+                // Apply to relevant elements
+                document.documentElement.style.setProperty('--resume-primary', colorHex);
+                // Update elements with the new hex (using inline style for the demo canvas)
+                const headers = resumeCanvas.querySelectorAll('h2, .text-primary, header');
+                headers.forEach(el => {
+                    if(el.classList.contains('text-primary')) el.style.color = colorHex;
+                    if(el.classList.contains('border-primary')) el.style.borderColor = colorHex;
+                });
+            });
+        });
+
+        // Hide Sidebar Interaction
+        const hideBtn = document.querySelector('aside button');
+        const sidebar = document.querySelector('aside');
+        hideBtn.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full', 'opacity-0');
+            setTimeout(() => {
+                sidebar.innerHTML = '<button onclick="location.reload()" class="absolute left-[-40px] top-4 p-2 bg-white rounded-full shadow-lg border border-outline-variant text-primary"><span class="material-symbols-outlined">settings</span></button>';
+                sidebar.classList.remove('translate-x-full', 'opacity-0');
+                sidebar.classList.replace('w-72', 'w-0');
+            }, 300);
+        });
+    </script>
+</body></html>

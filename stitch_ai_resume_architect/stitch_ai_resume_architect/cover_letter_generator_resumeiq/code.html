@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeIQ - Cover Letter Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .font-geist {
+            font-family: 'Geist', sans-serif;
+        }
+        .document-shadow {
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e5eeff;
+            border-radius: 10px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed": "#1c0062",
+                "on-tertiary-container": "#d2d4d6",
+                "on-secondary-fixed": "#131b2e",
+                "inverse-on-surface": "#eaf1ff",
+                "on-secondary-container": "#5c647a",
+                "on-primary": "#ffffff",
+                "on-surface": "#0b1c30",
+                "surface-tint": "#6042d6",
+                "inverse-surface": "#213145",
+                "on-secondary": "#ffffff",
+                "surface-container": "#e5eeff",
+                "primary-fixed-dim": "#cabeff",
+                "tertiary-fixed-dim": "#c4c7c9",
+                "outline": "#797586",
+                "surface-bright": "#f8f9ff",
+                "on-secondary-fixed-variant": "#3f465c",
+                "secondary-container": "#dae2fd",
+                "primary": "#451ebb",
+                "primary-fixed": "#e6deff",
+                "surface-container-low": "#eff4ff",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed": "#191c1e",
+                "error-container": "#ffdad6",
+                "surface-variant": "#d3e4fe",
+                "on-background": "#0b1c30",
+                "error": "#ba1a1a",
+                "primary-container": "#5d3fd3",
+                "inverse-primary": "#cabeff",
+                "on-tertiary": "#ffffff",
+                "surface-dim": "#cbdbf5",
+                "on-tertiary-fixed-variant": "#444749",
+                "on-primary-fixed-variant": "#4723be",
+                "on-error-container": "#93000a",
+                "outline-variant": "#c9c4d7",
+                "secondary": "#565e74",
+                "tertiary-container": "#595c5e",
+                "secondary-fixed-dim": "#bec6e0",
+                "tertiary-fixed": "#e0e3e5",
+                "surface-container-highest": "#d3e4fe",
+                "background": "#f8f9ff",
+                "surface-container-high": "#dce9ff",
+                "secondary-fixed": "#dae2fd",
+                "on-surface-variant": "#484554",
+                "surface": "#f8f9ff",
+                "on-primary-container": "#d8ceff",
+                "tertiary": "#414546",
+                "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "unit-base": "8px",
+                "margin-mobile": "16px",
+                "margin-desktop": "40px",
+                "container-max": "1280px",
+                "stack-md": "24px",
+                "stack-sm": "12px",
+                "stack-lg": "48px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "label-sm": ["Geist"],
+                "headline-xl": ["Geist"],
+                "headline-md": ["Geist"],
+                "label-md": ["Geist"],
+                "headline-lg": ["Geist"],
+                "body-lg": ["Inter"],
+                "headline-lg-mobile": ["Geist"],
+                "body-md": ["Inter"]
+            },
+            "fontSize": {
+                "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface overflow-hidden h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-margin-desktop w-full h-16 sticky top-0 z-50 bg-surface-container-low dark:bg-surface-container-low shadow-sm">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">ResumeIQ</div>
+<nav class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-150" href="#">Dashboard</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-150" href="#">Resumes</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 active:scale-95 duration-150" href="#">Cover Letters</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-150" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">account_circle</button>
+</div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-screen fixed left-0 top-16 w-64 py-stack-md px-4 border-r border-outline-variant dark:border-outline-variant bg-surface-container-lowest dark:bg-surface-dim shadow-sm hidden md:flex">
+<div class="mb-8 px-4">
+<h3 class="font-headline-md text-headline-md text-primary">Editor Mode</h3>
+<p class="text-on-surface-variant font-label-md text-label-md">AI Assistant Active</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-xl transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">edit_note</span>
+<span class="font-label-md text-label-md">Editor</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-xl transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">description</span>
+<span class="font-label-md text-label-md">Templates</span>
+</a>
+<a class="bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-xl flex items-center px-4 py-3 active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">auto_awesome</span>
+<span class="font-label-md text-label-md">AI Enhancer</span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center px-4 py-3 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-xl transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3">history</span>
+<span class="font-label-md text-label-md">History</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-white py-3 px-6 rounded-full font-label-md text-label-md hover:shadow-lg transition-all active:scale-95">
+                Export PDF
+            </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col md:flex-row h-full overflow-hidden">
+<!-- Left Pane: Input Form -->
+<section class="w-full md:w-[420px] bg-surface flex flex-col border-r border-outline-variant overflow-y-auto custom-scrollbar p-6 lg:p-8">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg mb-2">Create Cover Letter</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Fill in the details below and our AI will craft a personalized letter for you.</p>
+</div>
+<div class="space-y-6">
+<!-- Target Company -->
+<div>
+<label class="block font-label-sm text-label-sm text-primary mb-2">Target Company Name</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 px-1 focus:outline-none focus:border-primary focus:ring-0 text-body-md transition-all" placeholder="e.g. Acme Corp" type="text"/>
+</div>
+<!-- Job Title -->
+<div>
+<label class="block font-label-sm text-label-sm text-primary mb-2">Job Title</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-2 px-1 focus:outline-none focus:border-primary focus:ring-0 text-body-md transition-all" placeholder="e.g. Senior UX Designer" type="text"/>
+</div>
+<!-- Job Description -->
+<div>
+<label class="block font-label-sm text-label-sm text-primary mb-2">Job Description</label>
+<textarea class="w-full bg-white/50 border border-outline-variant rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-body-md transition-all custom-scrollbar" placeholder="Paste the job requirements here..." rows="6"></textarea>
+</div>
+<!-- Tone Selector -->
+<div>
+<label class="block font-label-sm text-label-sm text-primary mb-4">Letter Tone</label>
+<div class="flex gap-2">
+<button class="flex-1 py-2 px-3 rounded-full border border-primary bg-primary text-white font-label-md text-label-md transition-all">Professional</button>
+<button class="flex-1 py-2 px-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-all">Enthusiastic</button>
+<button class="flex-1 py-2 px-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-all">Creative</button>
+</div>
+</div>
+<!-- Generate Button -->
+<div class="pt-4">
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">auto_awesome</span>
+<span class="font-headline-md text-headline-md">Generate Cover Letter</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-4 flex gap-4 items-center mt-8">
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">
+                            Pro Tip: Mention a specific project from your resume to make it more impactful.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Right Pane: Preview -->
+<section class="flex-1 bg-surface-container-low overflow-y-auto custom-scrollbar p-6 lg:p-12 relative">
+<!-- Preview Actions -->
+<div class="max-w-[800px] mx-auto mb-6 flex justify-end gap-3 sticky top-0 z-10 glass-panel p-2 rounded-xl border border-white/40">
+<button class="flex items-center gap-2 px-4 py-2 text-secondary hover:text-primary transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined">content_copy</span>
+                        Copy to Clipboard
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-on-surface text-white rounded-lg hover:opacity-90 transition-all font-label-md text-label-md shadow-md">
+<span class="material-symbols-outlined">download</span>
+                        Download PDF
+                    </button>
+</div>
+<!-- Document Stage -->
+<div class="max-w-[800px] mx-auto bg-surface-container-lowest p-12 lg:p-16 document-shadow min-h-[1050px] font-body-md text-body-md text-[#1e293b] relative">
+<!-- Progress Bar (Internal) -->
+<div class="absolute top-0 left-0 w-full h-1 bg-surface-container">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<div class="mb-12">
+<p class="font-bold text-headline-md mb-1">Alex Carter</p>
+<p class="text-secondary">San Francisco, CA • alex.carter@email.com • (555) 012-3456</p>
+</div>
+<div class="mb-8">
+<p class="mb-1">October 24, 2023</p>
+</div>
+<div class="mb-8">
+<p class="font-bold">Hiring Manager</p>
+<p>Acme Digital Solutions</p>
+<p>123 Innovation Drive</p>
+<p>San Francisco, CA 94105</p>
+</div>
+<div class="mb-6">
+<p>Dear Hiring Manager,</p>
+</div>
+<div class="space-y-6 leading-relaxed">
+<p>
+                            I am writing to express my enthusiastic interest in the Senior UX Designer position at Acme Digital Solutions, as advertised on your careers portal. With over seven years of experience in creating human-centric digital experiences and a proven track record of increasing user engagement by 40% in my previous role, I am confident that my blend of strategic thinking and creative execution makes me an ideal fit for your design team.
+                        </p>
+<p>
+                            Throughout my career, I have focused on bridging the gap between complex business requirements and intuitive user interfaces. At my current organization, I led the redesign of our core SaaS platform, which involved conducting extensive user research, developing high-fidelity prototypes, and collaborating closely with engineering teams to ensure seamless implementation. This initiative not only improved the NPS score by 15 points but also significantly reduced customer support tickets related to navigation issues.
+                        </p>
+<p>
+                            What particularly draws me to Acme Digital Solutions is your commitment to accessibility and your forward-thinking approach to AI-driven interfaces. I have long admired how your team balances aesthetic elegance with functional utility. I am eager to bring my expertise in motion design and design systems to help Acme continue its trajectory of innovation and user-first growth.
+                        </p>
+<p>
+                            Thank you for your time and consideration. I have attached my resume and portfolio for your review and look forward to the possibility of discussing how my skills and experiences align with the needs of your design team.
+                        </p>
+</div>
+<div class="mt-12">
+<p>Sincerely,</p>
+<p class="mt-8 font-bold">Alex Carter</p>
+</div>
+<!-- AI Suggestion Spark Chips -->
+<div class="absolute -right-4 top-1/4 translate-x-full hidden lg:block w-48 space-y-4">
+<div class="bg-white p-4 rounded-xl shadow-lg border border-primary/10 animate-pulse">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md mb-2">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+                                AI Suggestion
+                            </div>
+<p class="text-label-sm text-secondary italic">"Try adding a specific metric about your last design sprint."</p>
+</div>
+</div>
+</div>
+<!-- Footer spacing for mobile -->
+<div class="h-12"></div>
+</section>
+</main>
+</div>
+<!-- Mobile Floating Action (Only visible on small screens) -->
+<div class="md:hidden fixed bottom-6 right-6 z-50">
+<button class="bg-primary text-white p-4 rounded-full shadow-2xl flex items-center justify-center">
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+<script>
+        // Micro-interactions for form fields
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.querySelector('label')?.classList.add('scale-105');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.querySelector('label')?.classList.remove('scale-105');
+            });
+        });
+
+        // Simple Tone Selector Toggle
+        const toneButtons = document.querySelectorAll('.flex.gap-2 button');
+        toneButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                toneButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('border-outline-variant', 'text-on-surface-variant');
+                });
+                btn.classList.add('bg-primary', 'text-white');
+                btn.classList.remove('border-outline-variant', 'text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>
