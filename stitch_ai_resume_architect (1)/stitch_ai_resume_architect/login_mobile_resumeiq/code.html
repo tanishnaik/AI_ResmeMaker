@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeIQ - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #000000;
+            color: #e5e2e1;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #2A2A2A;
+        }
+
+        .input-focus-ring:focus-within {
+            border-color: #7c4dff;
+            box-shadow: 0 0 0 1px #7c4dff;
+        }
+
+        .glow-accent {
+            box-shadow: 0 0 15px rgba(124, 77, 255, 0.15);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "outline-variant": "#494455",
+                        "primary-container": "#7c4dff",
+                        "on-tertiary": "#512400",
+                        "on-background": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353534",
+                        "on-primary-container": "#fcf6ff",
+                        "on-primary-fixed": "#20005f",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#cac3d8",
+                        "surface": "#131313",
+                        "secondary": "#bdf4ff",
+                        "background": "#000000",
+                        "primary": "#cdbdff",
+                        "on-primary": "#370096",
+                        "inverse-on-surface": "#313030",
+                        "inverse-surface": "#e5e2e1",
+                        "outline": "#948ea1",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "body-sm": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- Atmospheric Background Animation -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary-container/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- Main Content -->
+<main class="relative z-10 flex flex-col items-center justify-center flex-grow px-margin-mobile py-xl">
+<!-- Logo & Header -->
+<header class="mb-xl text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 mb-md bg-surface-container-high rounded-xl border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="description">description</span>
+</div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-background tracking-tight">ResumeIQ</h1>
+<p class="font-body-md text-on-surface-variant mt-sm">Unlock your professional potential.</p>
+</header>
+<!-- Login Card -->
+<div class="w-full max-w-sm glass-panel p-lg rounded-xl glow-accent">
+<form class="space-y-lg" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant ml-1">Email Address</label>
+<div class="relative flex items-center bg-background border border-outline-variant rounded-lg input-focus-ring transition-all duration-200">
+<span class="material-symbols-outlined absolute left-md text-outline" data-icon="mail">mail</span>
+<input class="w-full bg-transparent border-none py-3 pl-12 pr-md text-on-background placeholder-outline focus:ring-0 font-body-md" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center ml-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Password</label>
+<a class="font-label-caps text-label-caps text-primary hover:underline" href="#">Forgot?</a>
+</div>
+<div class="relative flex items-center bg-background border border-outline-variant rounded-lg input-focus-ring transition-all duration-200">
+<span class="material-symbols-outlined absolute left-md text-outline" data-icon="lock">lock</span>
+<input class="w-full bg-transparent border-none py-3 pl-12 pr-md text-on-background placeholder-outline focus:ring-0 font-body-md" placeholder="••••••••" type="password"/>
+<button class="absolute right-md text-outline" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Sign In Button -->
+<button class="w-full bg-primary-container text-on-primary-container font-headline-lg-mobile text-base py-3 rounded-lg font-bold transition-all active:scale-95 hover:brightness-110 shadow-lg">
+                    Sign In
+                </button>
+</form>
+<!-- Divider -->
+<div class="relative my-xl flex items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="px-md font-label-caps text-label-caps text-outline bg-transparent uppercase tracking-widest">or continue with</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Social Login Buttons -->
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-sm bg-surface border border-outline-variant py-3 rounded-lg hover:bg-surface-variant transition-colors active:scale-95">
+<div class="w-5 h-5 flex items-center justify-center bg-white rounded-full overflow-hidden">
+<img alt="Google" class="w-3 h-3" color\"_logo.svg"="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVQARS4-KtCG-fK3Ae4R2VrYxzt_YkgeLxhitXxNzWe2b38GCpM3h0rtPLn7QPXBDVrwpIq6zcTSBioDJQQPW4jSrLYURy__ZTUwI7lZv3mcmKsYtl-UdZxrzMOmKqNe-FGc0RtdEwMPK0nTeacPn2JqBQ7AzQTQQSMW0KfeHjdYLY09sYNEfwie4LZRMvGcwSFvz25oVI3tT2wrSns6-ZNGugzwgMToWTZ61Nu764FzuzAIy3cIBtmJqHO2E2GJSwr3p2qveDR6a5"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-background">Google</span>
+</button>
+<button class="flex items-center justify-center gap-sm bg-surface border border-outline-variant py-3 rounded-lg hover:bg-surface-variant transition-colors active:scale-95">
+<div class="w-5 h-5 flex items-center justify-center bg-[#0077b5] rounded-sm">
+<span class="text-white font-bold text-[10px]">in</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-background">LinkedIn</span>
+</button>
+</div>
+<!-- Footer Link -->
+<p class="mt-xl text-center font-body-sm text-on-surface-variant">
+                Don't have an account? 
+                <a class="text-primary font-bold hover:underline" href="#">Create Account</a>
+</p>
+</div>
+<!-- Privacy & Terms -->
+<footer class="mt-xl text-center px-lg">
+<p class="font-label-caps text-[10px] text-outline leading-relaxed max-w-[280px]">
+                By signing in, you agree to ResumeIQ's <br/>
+<a class="underline" href="#">Terms of Service</a> &amp; <a class="underline" href="#">Privacy Policy</a>
+</p>
+</footer>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.classList.add('scale-95');
+            });
+            btn.addEventListener('touchend', function() {
+                this.classList.remove('scale-95');
+            });
+        });
+
+        // Simple floating animation for the background elements
+        const blobs = document.querySelectorAll('.fixed > div');
+        blobs.forEach((blob, index) => {
+            let x = 0;
+            let y = 0;
+            let dx = (index + 1) * 0.2;
+            let dy = (index + 1) * 0.15;
+            
+            function animate() {
+                x += dx;
+                y += dy;
+                if(x > 20 || x < -20) dx *= -1;
+                if(y > 20 || y < -20) dy *= -1;
+                blob.style.transform = `translate(${x}px, ${y}px)`;
+                requestAnimationFrame(animate);
+            }
+            animate();
+        });
+    </script>
+</body></html>

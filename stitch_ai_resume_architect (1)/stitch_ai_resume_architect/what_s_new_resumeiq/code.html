@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What's New | ResumeIQ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .document-shadow {
+            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e6deff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#5d3fd3",
+                        "primary": "#451ebb",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "on-primary-container": "#d8ceff",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#cabeff",
+                        "tertiary": "#414546",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#dae2fd",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "outline": "#797586",
+                        "on-surface-variant": "#484554",
+                        "on-error": "#ffffff",
+                        "secondary": "#565e74",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "secondary-fixed": "#dae2fd",
+                        "on-background": "#0b1c30",
+                        "outline-variant": "#c9c4d7",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed": "#1c0062",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary-fixed-variant": "#4723be",
+                        "surface-tint": "#6042d6",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-tertiary-container": "#d2d4d6",
+                        "on-secondary-container": "#5c647a",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-primary": "#cabeff",
+                        "tertiary-container": "#595c5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit-base": "8px",
+                        "stack-md": "24px",
+                        "margin-desktop": "40px",
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Geist"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Geist"],
+                        "label-md": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 docked full-width top-0 sticky backdrop-blur-xl border-b border-outline-variant/30 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">ResumeIQ</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-label-md text-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-label-md text-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Templates</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-fixed-variant font-label-md text-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Tracking</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant">account_circle</button>
+<button class="bg-primary text-white font-label-md text-label-md px-6 py-2.5 rounded-full scale-95 active:scale-90 transition-transform">Build Resume</button>
+</div>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative pt-20 pb-16 px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<span class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary-container/10 border border-primary/20 text-primary font-label-md text-label-md mb-6 animate-fade-in">
+<span class="material-symbols-outlined text-[18px] mr-2" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    Product Update — Winter 2024
+                </span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface max-w-3xl mx-auto mb-6">
+                    Elevate Your Career with <span class="text-primary">Intelligent Updates</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    We've integrated advanced AI capabilities and sleek professional designs to ensure your candidacy stands out in any recruitment cycle.
+                </p>
+</div>
+<!-- Abstract background effect -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[80px]"></div>
+</section>
+<!-- Flagship Feature: Cover Letter Generator -->
+<section class="px-margin-desktop mb-stack-lg">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<div class="lg:col-span-7 bg-white rounded-[32px] p-8 md:p-12 document-shadow border border-outline-variant/30 flex flex-col justify-center relative overflow-hidden group">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">Cover Letter Generator</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-lg">
+                                Stop staring at a blank page. Our AI now drafts high-impact, tailor-made cover letters that align perfectly with your resume and the target job description in seconds.
+                            </p>
+<div class="flex flex-wrap gap-4 mb-8">
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px] text-primary">target</span>
+                                    Role Matching
+                                </div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px] text-primary">history_edu</span>
+                                    Tone Selection
+                                </div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px] text-primary">bolt</span>
+                                    Instant Draft
+                                </div>
+</div>
+<button class="inline-flex items-center gap-3 bg-primary text-white font-label-md text-label-md px-8 py-4 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all">
+                                Try it now
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Decorative UI Element -->
+<div class="absolute right-[-10%] bottom-[-10%] w-[320px] h-[400px] bg-surface-container-low border border-outline-variant/50 rounded-2xl rotate-[-12deg] group-hover:rotate-[-8deg] transition-transform duration-700 hidden md:block p-6">
+<div class="w-1/2 h-4 bg-primary/10 rounded mb-4"></div>
+<div class="w-full h-2 bg-outline-variant/30 rounded mb-2"></div>
+<div class="w-full h-2 bg-outline-variant/30 rounded mb-2"></div>
+<div class="w-4/5 h-2 bg-outline-variant/30 rounded mb-6"></div>
+<div class="w-full h-2 bg-outline-variant/30 rounded mb-2"></div>
+<div class="w-full h-2 bg-outline-variant/30 rounded mb-2"></div>
+<div class="w-3/4 h-2 bg-outline-variant/30 rounded mb-2"></div>
+</div>
+</div>
+<div class="lg:col-span-5 grid grid-rows-2 gap-8">
+<!-- AI Enhancements -->
+<div class="bg-surface-container-lowest rounded-[32px] p-8 border border-outline-variant/30 flex flex-col justify-between hover:border-primary/30 transition-colors">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-primary-container/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">AI Enhancements</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    Smarter bullet point optimization helps you quantify achievements and use power verbs that ATS systems love.
+                                </p>
+</div>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 mt-4 group" href="#">
+                                Learn about AI Logic
+                                <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<!-- Progress Tracking -->
+<div class="bg-surface-container-lowest rounded-[32px] p-8 border border-outline-variant/30 flex flex-col justify-between hover:border-primary/30 transition-colors">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Application Analytics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    Track which versions of your resume are getting the most engagement with our new visual tracking dashboard.
+                                </p>
+</div>
+<a class="text-primary font-label-md text-label-md flex items-center gap-2 mt-4 group" href="#">
+                                View Dashboard
+                                <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- New Templates Grid -->
+<section class="px-margin-desktop py-16 bg-surface-container-low/50">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">New Premium Templates</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Meticulously crafted layouts designed for specific career paths. Optimized for clarity and modern aesthetic standards.
+                        </p>
+</div>
+<button class="font-label-md text-label-md text-primary px-6 py-3 border-2 border-primary rounded-full hover:bg-primary hover:text-white transition-all">
+                        Browse all 40+ templates
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Modern Style -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-white rounded-3xl overflow-hidden mb-6 document-shadow border border-outline-variant/20 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+<div class="w-full h-full p-8 flex flex-col">
+<div class="flex justify-between items-start mb-10">
+<div class="w-1/3 space-y-3">
+<div class="h-6 w-full bg-primary/10 rounded"></div>
+<div class="h-2 w-1/2 bg-outline-variant/30 rounded"></div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+</div>
+<div class="space-y-6 flex-grow">
+<div class="space-y-2">
+<div class="h-3 w-1/4 bg-primary/20 rounded"></div>
+<div class="h-2 w-full bg-outline-variant/20 rounded"></div>
+<div class="h-2 w-5/6 bg-outline-variant/20 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-3 w-1/4 bg-primary/20 rounded"></div>
+<div class="h-2 w-full bg-outline-variant/20 rounded"></div>
+<div class="h-2 w-4/5 bg-outline-variant/20 rounded"></div>
+<div class="h-2 w-full bg-outline-variant/20 rounded"></div>
+</div>
+<div class="space-y-2">
+<div class="h-3 w-1/4 bg-primary/20 rounded"></div>
+<div class="h-2 w-full bg-outline-variant/20 rounded"></div>
+</div>
+</div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-cover bg-center" data-alt="A clean and minimalist professional resume template layout. The style is modern with airy white space, elegant typography using a combination of serif and sans-serif fonts, and subtle indigo accents. The mood is sophisticated and authoritative, conveying a sense of high-end corporate professionalism." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsZdsGT2rq5VYNuMp8wrbYswu6kQH2YRSaas63CUJRq0b4QsMP70TMH45FfXxL87sp_9Gqo2XnvuoBq16l_fXc_yyfd90TasjHIkWgK-eTqR6L3nyU7X9GL_MXdk6cwxJ4Gz1I03m6AQda1zAWIrjCDsI0pRWyTscCP6g19Tdb6gR6i0opoAW21DY5L2TmoZiWeLWA82vPCGaXrevr0GM2ELHHqGgQCKrve5e3bwv2vfTTuTD1g4I5A24VZFZajw7zHiSLc_gX585J')"></div>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<div>
+<h4 class="font-headline-md text-headline-md">The Modernist</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Creative &amp; Tech Roles</p>
+</div>
+<div class="px-3 py-1 bg-primary-container/10 text-primary rounded-full font-label-sm text-label-sm">New</div>
+</div>
+</div>
+<!-- Executive Style -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-white rounded-3xl overflow-hidden mb-6 document-shadow border border-outline-variant/20 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+<div class="w-full h-full p-8 flex flex-col">
+<div class="text-center mb-10">
+<div class="h-6 w-1/2 bg-on-surface/10 rounded mx-auto mb-2"></div>
+<div class="h-2 w-1/3 bg-outline-variant/30 rounded mx-auto"></div>
+</div>
+<div class="grid grid-cols-12 gap-6 flex-grow">
+<div class="col-span-8 space-y-6">
+<div class="h-2 w-full bg-outline-variant/20 rounded"></div>
+<div class="h-2 w-full bg-outline-variant/20 rounded"></div>
+<div class="h-2 w-3/4 bg-outline-variant/20 rounded"></div>
+<div class="h-2 w-full bg-outline-variant/20 rounded"></div>
+</div>
+<div class="col-span-4 space-y-4">
+<div class="h-2 w-full bg-primary/10 rounded"></div>
+<div class="h-2 w-full bg-primary/10 rounded"></div>
+<div class="h-2 w-2/3 bg-primary/10 rounded"></div>
+</div>
+</div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-cover bg-center" data-alt="A premium executive-style resume layout featuring traditional column structures and conservative yet bold typography. The design emphasizes experience and leadership with a focus on hierarchy and structured sections. The palette is a professional mix of slate grey, deep indigo, and crisp whites. The aesthetic is high-trust and senior-level professional." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8CTmj_l3aH36OKrWiB_zfJM5h9USW8FrQZ2oQu6Ni8ojxm9KhV85Dsr_sgm_ecbrdvOVcyVQxVRL00Ve8JAMykTRu8OB_QfNwgswFTP5gnicQxeu0F45uDJd7L0h9o5SqOdS6OdJSTqh3ChnnJG0JZSWanMr-vRvc58Kbu0pQuB1e4hfcQx6ThLvsfVBGdXTW67dSytMXzIuv_Kt3_MX4ZVDQeX3cxGLfpLkarcWo-Ke_AD5RDSTdgGfWNkLsTkxNEkdC49IspSqk')"></div>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<div>
+<h4 class="font-headline-md text-headline-md">Elite Executive</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Senior Leadership &amp; Finance</p>
+</div>
+<div class="px-3 py-1 bg-primary-container/10 text-primary rounded-full font-label-sm text-label-sm">New</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual Help / AI Spark Chips -->
+<section class="px-margin-desktop py-stack-lg">
+<div class="max-w-container-max mx-auto text-center">
+<h3 class="font-headline-md text-headline-md mb-8">Quickly explore other updates</h3>
+<div class="flex flex-wrap justify-center gap-3">
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/20 text-primary cursor-pointer hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[16px]">spark</span>
+                        Skill Suggestions
+                    </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/20 text-primary cursor-pointer hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[16px]">spark</span>
+                        Smart Spellcheck
+                    </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/20 text-primary cursor-pointer hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[16px]">spark</span>
+                        LinkedIn Import 2.0
+                    </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/20 text-primary cursor-pointer hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[16px]">spark</span>
+                        Dark Mode Support
+                    </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/20 text-primary cursor-pointer hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[16px]">spark</span>
+                        One-Click Formatting
+                    </span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface full-width border-t border-outline-variant flat no shadows">
+<div class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-headline-md font-headline-md text-primary">ResumeIQ</div>
+<p class="text-on-surface-variant/80 font-label-sm text-label-sm max-w-xs text-center md:text-left">
+                    The intelligence-driven platform for modern job seekers.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant/80 font-label-sm text-label-sm hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant/80 font-label-sm text-label-sm hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant/80 font-label-sm text-label-sm hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-on-surface-variant/80 font-label-sm text-label-sm hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">API Docs</a>
+</div>
+<div class="text-on-surface dark:text-inverse-on-surface font-label-sm text-label-sm">
+                © 2024 ResumeIQ AI. All rights reserved.
+            </div>
+</div>
+</footer>
+<!-- Floating Sparkle Button for focused action -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-[32px] group-hover:rotate-12 transition-transform">auto_awesome</span>
+<div class="absolute right-20 bg-white text-on-surface font-label-md text-label-md px-4 py-2 rounded-xl shadow-lg border border-outline-variant/30 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
+            Launch AI Assistant
+        </div>
+</button>
+<script>
+        // Simple Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

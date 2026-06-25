@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeIQ | Cover Letter Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #2A2A2A;
+        }
+        .paper-preview {
+            background: #ffffff;
+            color: #1a1a1a;
+            box-shadow: 0 0 20px rgba(124, 77, 255, 0.15);
+        }
+        /* Custom scrollbar for OLED */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7C4DFF; }
+        
+        .active-tone {
+            border-color: #7C4DFF;
+            background: rgba(124, 77, 255, 0.1);
+            box-shadow: 0 0 12px rgba(124, 77, 255, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-secondary-fixed": "#001f24",
+                    "on-tertiary-fixed": "#311300",
+                    "outline-variant": "#494455",
+                    "primary-container": "#7c4dff",
+                    "surface-dim": "#131313",
+                    "surface-tint": "#cdbdff",
+                    "on-tertiary": "#512400",
+                    "on-background": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#b55800",
+                    "surface-variant": "#353534",
+                    "on-primary-container": "#fcf6ff",
+                    "on-secondary": "#00363d",
+                    "on-primary-fixed": "#20005f",
+                    "error": "#ffb4ab",
+                    "on-surface-variant": "#cac3d8",
+                    "surface": "#131313",
+                    "secondary": "#bdf4ff",
+                    "on-tertiary-fixed-variant": "#733600",
+                    "background": "#131313",
+                    "tertiary-fixed": "#ffdbc7",
+                    "primary-fixed": "#e8deff",
+                    "on-primary-fixed-variant": "#4f00d0",
+                    "on-secondary-container": "#00616d",
+                    "primary": "#cdbdff",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#00e3fd",
+                    "surface-container-highest": "#353534",
+                    "on-primary": "#370096",
+                    "inverse-on-surface": "#313030",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-container": "#fff7f4",
+                    "secondary-fixed": "#9cf0ff",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container": "#201f1f",
+                    "on-surface": "#e5e2e1",
+                    "tertiary": "#ffb688",
+                    "primary-fixed-dim": "#cdbdff",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed-dim": "#ffb688",
+                    "secondary-fixed-dim": "#00daf3",
+                    "inverse-primary": "#6833ea",
+                    "outline": "#948ea1",
+                    "surface-bright": "#393939"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "md": "16px",
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "margin-desktop": "64px",
+                    "xl": "48px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Geist"],
+                    "headline-xl": ["Geist"],
+                    "body-sm": ["Geist"],
+                    "headline-xl-mobile": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-md": ["Geist"],
+                    "mono-code": ["Geist"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "mono-code": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md selection:bg-primary selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-surface-container-lowest border-b border-outline-variant">
+<nav class="flex justify-between items-center px-gutter py-md w-full max-w-full">
+<div class="flex items-center gap-xl">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">ResumeIQ</span>
+<div class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Resumes</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Cover Letters</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-sm rounded-full hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex h-[calc(100vh-72px)] overflow-hidden">
+<!-- Side Navigation (Editor Context) -->
+<aside class="hidden lg:flex flex-col h-full py-lg px-md gap-base bg-background dark:bg-surface-container-low border-r border-outline-variant w-64 shrink-0">
+<div class="mb-lg px-md">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Active Draft</h3>
+<p class="font-headline-lg text-headline-lg text-primary truncate">Senior Product Designer</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">v2.4 Pro</p>
+</div>
+<nav class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface px-md py-sm transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">edit_note</span>
+<span class="font-label-caps text-label-caps">Editor</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface px-md py-sm transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard_customize</span>
+<span class="font-label-caps text-label-caps">Templates</span>
+</a>
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-caps text-label-caps">AI Enhancer</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-on-surface px-md py-sm transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">history</span>
+<span class="font-label-caps text-label-caps">History</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary-container text-on-primary-container font-label-caps text-label-caps py-md rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-body-md">download</span>
+                Download PDF
+            </button>
+</aside>
+<!-- Main Workspace: Split Pane -->
+<div class="flex-1 flex flex-col md:flex-row overflow-hidden bg-black">
+<!-- Left Pane: Configuration -->
+<section class="w-full md:w-[45%] lg:w-[40%] h-full overflow-y-auto p-gutter border-r border-outline-variant bg-surface-container-lowest">
+<div class="max-w-xl mx-auto space-y-xl">
+<header>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Craft your story</h1>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Input the details and our AI will generate a tailored, ATS-optimized cover letter.</p>
+</header>
+<!-- Form Section -->
+<div class="space-y-lg">
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">Target Company</label>
+<input class="w-full bg-black border border-outline-variant rounded-lg px-md py-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="e.g. Acme Corp" type="text"/>
+</div>
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">Job Description</label>
+<textarea class="w-full bg-black border border-outline-variant rounded-lg px-md py-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Paste the job description here..." rows="6"></textarea>
+</div>
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">Tone of Voice</label>
+<div class="grid grid-cols-3 gap-sm">
+<button class="active-tone flex flex-col items-center gap-xs py-md border border-outline-variant rounded-lg transition-all" onclick="selectTone(this)">
+<span class="material-symbols-outlined text-primary">work</span>
+<span class="font-label-caps text-label-caps">Professional</span>
+</button>
+<button class="flex flex-col items-center gap-xs py-md border border-outline-variant rounded-lg transition-all hover:bg-surface-container-high" onclick="selectTone(this)">
+<span class="material-symbols-outlined text-on-surface-variant">rocket_launch</span>
+<span class="font-label-caps text-label-caps">Enthusiastic</span>
+</button>
+<button class="flex flex-col items-center gap-xs py-md border border-outline-variant rounded-lg transition-all hover:bg-surface-container-high" onclick="selectTone(this)">
+<span class="material-symbols-outlined text-on-surface-variant">palette</span>
+<span class="font-label-caps text-label-caps">Creative</span>
+</button>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">Key Highlights (Optional)</label>
+<input class="w-full bg-black border border-outline-variant rounded-lg px-md py-sm text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="e.g. 5 years at Google, specialized in React" type="text"/>
+</div>
+<button class="w-full bg-primary py-md text-on-primary font-bold rounded-lg flex items-center justify-center gap-md hover:brightness-110 active:scale-[0.98] transition-all group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">auto_awesome</span>
+                            Generate Cover Letter
+                        </button>
+</div>
+</div>
+</section>
+<!-- Right Pane: Live Preview -->
+<section class="hidden md:flex flex-1 h-full bg-surface-container overflow-y-auto p-xl justify-center items-start relative">
+<!-- Atmospheric Background Detail -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="paper-preview w-full max-w-2xl aspect-[1/1.414] p-xl rounded-sm shadow-2xl relative">
+<div class="mb-xl border-b border-gray-200 pb-lg">
+<h2 class="text-2xl font-bold text-gray-900">Alex Morgan</h2>
+<p class="text-sm text-gray-500">San Francisco, CA • alex.morgan@example.com • 555-0123</p>
+</div>
+<div class="space-y-lg text-gray-800 leading-relaxed font-serif">
+<p class="text-sm text-gray-600 mb-lg">May 24, 2024</p>
+<div class="space-y-md">
+<p>Hiring Manager<br/>Acme Corp<br/>123 Tech Lane</p>
+<p class="font-bold">Re: Senior Product Designer Application</p>
+<p>Dear Hiring Manager,</p>
+<p>I am writing to express my enthusiastic interest in the Senior Product Designer position at Acme Corp. With over eight years of experience crafting intuitive digital experiences and a proven track record of leading design systems for high-growth startups, I am confident that my background aligns perfectly with your team's vision.</p>
+<p>At my previous role at InnovateUI, I spearheaded the redesign of the core dashboard, resulting in a 35% increase in user engagement. I notice that Acme Corp is currently expanding its OLED-focused interface strategy—an area I have specialized in for the past three years. My approach combines rigorous data analysis with empathetic user research to create products that are not just visually stunning but mathematically precise.</p>
+<p>I am particularly drawn to Acme Corp's commitment to sustainable tech solutions. I would welcome the opportunity to discuss how my expertise in systematic design can contribute to your upcoming product roadmap.</p>
+<p>Sincerely,</p>
+<p class="font-bold">Alex Morgan</p>
+</div>
+</div>
+<!-- Subtle watermark-like glow on paper -->
+<div class="absolute top-4 right-4 text-[10px] font-mono text-gray-300 tracking-widest uppercase pointer-events-none">Draft Pre-v2.4</div>
+</div>
+<!-- Floating Toolbar for Preview -->
+<div class="fixed bottom-lg left-1/2 md:left-[70%] -translate-x-1/2 glass-panel px-md py-sm rounded-full flex items-center gap-md shadow-xl">
+<button class="p-xs hover:text-primary transition-colors flex flex-col items-center">
+<span class="material-symbols-outlined">zoom_in</span>
+<span class="text-[10px] font-label-caps">Zoom</span>
+</button>
+<div class="w-px h-6 bg-outline-variant"></div>
+<button class="p-xs hover:text-primary transition-colors flex flex-col items-center">
+<span class="material-symbols-outlined">content_copy</span>
+<span class="text-[10px] font-label-caps">Copy</span>
+</button>
+<button class="p-xs hover:text-primary transition-colors flex flex-col items-center">
+<span class="material-symbols-outlined">share</span>
+<span class="text-[10px] font-label-caps">Share</span>
+</button>
+<div class="w-px h-6 bg-outline-variant"></div>
+<button class="bg-primary px-lg py-sm rounded-full text-on-primary text-sm font-bold flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">print</span>
+                        Print
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Mobile Only or Bottom Anchor) -->
+<footer class="md:hidden w-full bottom-0 bg-background dark:bg-surface-dim border-t border-outline-variant">
+<div class="flex justify-around items-center py-sm">
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="text-[10px] font-label-caps">Input</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">visibility</span>
+<span class="text-[10px] font-label-caps">Preview</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">download</span>
+<span class="text-[10px] font-label-caps">Export</span>
+</button>
+</div>
+</footer>
+<script>
+        function selectTone(element) {
+            // Remove active classes from all siblings
+            const parent = element.parentElement;
+            const buttons = parent.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active-tone');
+                const icon = btn.querySelector('.material-symbols-outlined');
+                const label = btn.querySelector('span:last-child');
+                icon.classList.remove('text-primary');
+                icon.classList.add('text-on-surface-variant');
+            });
+
+            // Add active classes to selected
+            element.classList.add('active-tone');
+            const activeIcon = element.querySelector('.material-symbols-outlined');
+            activeIcon.classList.remove('text-on-surface-variant');
+            activeIcon.classList.add('text-primary');
+        }
+
+        // Simple typing effect simulation for AI feel
+        document.querySelector('button.bg-primary').addEventListener('click', function() {
+            this.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Analyzing JD...';
+            setTimeout(() => {
+                this.innerHTML = '<span class="material-symbols-outlined animate-bounce">auto_awesome</span> Generating Magic...';
+                setTimeout(() => {
+                    this.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Draft Updated';
+                    setTimeout(() => {
+                        this.innerHTML = '<span class="material-symbols-outlined">auto_awesome</span> Generate Cover Letter';
+                    }, 2000);
+                }, 1500);
+            }, 1000);
+        });
+    </script>
+</body></html>

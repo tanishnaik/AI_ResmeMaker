@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeIQ - Precision Career Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#565e74",
+                        "background": "#f8f9ff",
+                        "outline": "#797586",
+                        "primary": "#451ebb",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "primary-fixed": "#e6deff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#414546",
+                        "on-secondary-container": "#5c647a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-container": "#d8ceff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#6042d6",
+                        "surface-dim": "#cbdbf5",
+                        "primary-container": "#5d3fd3",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#4723be",
+                        "outline-variant": "#c9c4d7",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed": "#1c0062",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-tertiary-container": "#d2d4d6",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-background": "#0b1c30",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "inverse-primary": "#cabeff",
+                        "on-surface-variant": "#484554",
+                        "primary-fixed-dim": "#cabeff",
+                        "secondary-container": "#dae2fd",
+                        "inverse-surface": "#213145",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "surface": "#f8f9ff",
+                        "tertiary-container": "#595c5e",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-bright": "#f8f9ff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit-base": "8px",
+                        "container-max": "1280px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "40px",
+                        "stack-sm": "12px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .premium-blur {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .document-elevation {
+            box-shadow: 0 20px 40px -10px rgba(69, 30, 187, 0.08);
+        }
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+        .animate-premium-float {
+            animation: float-slow 10s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+<!-- TopNavBar Shared Component -->
+<nav class="bg-surface dark:bg-surface-dim docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline premium-blur">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-12">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">ResumeIQ</span>
+<div class="hidden md:flex gap-8">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-label-md text-label-md" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#templates">Resumes</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Cover Letters</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full border border-outline-variant overflow-hidden cursor-pointer hover:border-primary transition-all active:scale-95">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgQq-8ZrGT54M74JcaLv3HRx2QCwv1StBjC0LeerWqYDsXnH5X6miQ52fOwfXtEHzSPkQxUR9Gw8uYOKYF5MQjWM8aRN-AGmJpm_IUqk9Gv7c-97dzTlO1XVBOqoINLINFxVTBKjihnPJyxPyxSks_PcJJKzdMBddXqKLXpNT81kCS_Z3G7nhwUfl50arAPggjVCWm8uWS9bTNGNZ61H_lGo1qrdhQgSGUpu0MuYL8ECKXv6TLF1l2q3FH6dUYOyloqGtqsAYjZ0tx"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:shadow-lg active:opacity-80 active:scale-95 transition-all">
+                Build Resume
+            </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden py-24">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+<div class="container mx-auto px-margin-desktop max-w-container-max relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-10">
+<div class="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 px-5 py-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-primary font-label-md text-label-md uppercase tracking-widest font-bold">Precision Career Engineering</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface leading-[1.1] tracking-tight">
+                        Land Your Dream Job with <span class="text-primary relative inline-block">AI-Powered<span class="absolute bottom-1 left-0 w-full h-3 bg-primary/10 -z-10"></span></span> Precision
+                    </h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Our intelligent platform leverages cognitive career analysis to optimize your profile for humans and algorithms alike. Bypass ATS filters with scientific accuracy.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-5">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-2xl font-headline-md text-headline-md hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all flex items-center justify-center gap-3 group">
+                            Build My Resume
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface px-10 py-5 rounded-2xl font-headline-md text-headline-md hover:bg-surface-container-low transition-all flex items-center justify-center gap-3 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">play_circle</span>
+                            See How it Works
+                        </button>
+</div>
+<div class="flex items-center gap-6 pt-6">
+<div class="flex -space-x-3">
+<img alt="User 1" class="w-12 h-12 rounded-full border-[3px] border-surface object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgQq-8ZrGT54M74JcaLv3HRx2QCwv1StBjC0LeerWqYDsXnH5X6miQ52fOwfXtEHzSPkQxUR9Gw8uYOKYF5MQjWM8aRN-AGmJpm_IUqk9Gv7c-97dzTlO1XVBOqoINLINFxVTBKjihnPJyxPyxSks_PcJJKzdMBddXqKLXpNT81kCS_Z3G7nhwUfl50arAPggjVCWm8uWS9bTNGNZ61H_lGo1qrdhQgSGUpu0MuYL8ECKXv6TLF1l2q3FH6dUYOyloqGtqsAYjZ0tx"/>
+<img alt="User 2" class="w-12 h-12 rounded-full border-[3px] border-surface object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXy1PYWhWPXDwU8FljYyojkigupUWFp5Z6CPkTRaFxvFzFSUzSLatKDcOvhxgYFM3N7rdQeoYx7qMBNrdirFJB4yFe6Gl4acyKFtjaPgOeai-pYguQVeGT2nfLST7VWFm9IgR2erazR4fqI-NJkTy3foRJvqt4FcyzvUd4CXpBuGekIP5Ipk_bKRAmQcugKfRblxEHHL5cZBM7vQOL53zB-7MWkjGod5WAGXQBXzZghJTsWw9M_TsmQ-l2txdh42wpAn7QcWYRsr4s"/>
+<img alt="User 3" class="w-12 h-12 rounded-full border-[3px] border-surface object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDWCQYwI-qye0RJ57Hj3fHgiyaHx6UEyohBImQaaDX32sxfevVh7y0T-9Zku8bbnY_BmxR2MOF1ANv2jV_fKcsNrG_3x6yqkiVfqd21-n20XeTpg05EjwEpV9n5NtwY-K2BODSTjie9k8CTyfr6U-jgGUaFlgJcMFnt55Xl_VQC0Pa5bEsW77pDnIIt8NFqkRPjrPN00CqRuJGMdKwDjg5Q5-LaDs2qrtxf7JfgPVZRF5YEyczGJAAFRb8Qm-PlvSbNmkdhekDsnMn"/>
+</div>
+<p class="text-body-md text-on-surface-variant"><span class="font-bold text-on-surface">50k+</span> professionals upgraded this month</p>
+</div>
+</div>
+<div class="relative flex items-center justify-center">
+<!-- Floating Document Mockup -->
+<div class="relative z-20 w-full max-w-[480px] bg-white rounded-2xl document-elevation p-10 animate-premium-float border border-outline-variant/10">
+<div class="flex justify-between items-start mb-8">
+<div class="space-y-3 w-2/3">
+<div class="h-8 w-full bg-surface-container-low rounded-lg"></div>
+<div class="h-4 w-1/2 bg-surface-container-low rounded-lg opacity-60"></div>
+</div>
+<div class="w-14 h-14 rounded-full bg-primary/5 border border-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</div>
+<div class="space-y-6">
+<div class="h-4 w-1/4 bg-primary/10 rounded-lg"></div>
+<div class="space-y-3">
+<div class="h-2.5 w-full bg-surface-container-low rounded-lg"></div>
+<div class="h-2.5 w-full bg-surface-container-low rounded-lg"></div>
+<div class="h-2.5 w-4/5 bg-surface-container-low rounded-lg"></div>
+</div>
+<div class="h-4 w-1/4 bg-primary/10 rounded-lg pt-4"></div>
+<div class="flex flex-wrap gap-3">
+<div class="h-8 px-4 bg-primary/5 rounded-full border border-primary/10 flex items-center text-[10px] text-primary font-bold">CLOUD OPS</div>
+<div class="h-8 px-4 bg-primary/5 rounded-full border border-primary/10 flex items-center text-[10px] text-primary font-bold">PYTHON</div>
+<div class="h-8 px-4 bg-primary/5 rounded-full border border-primary/10 flex items-center text-[10px] text-primary font-bold">AWS</div>
+</div>
+</div>
+<!-- Premium AI Suggestions Overlay -->
+<div class="absolute -right-12 top-1/3 glass-panel bg-white/90 premium-blur border border-primary/20 p-6 rounded-2xl shadow-2xl max-w-[220px]">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary text-xl">auto_awesome</span>
+<span class="font-label-md text-primary font-bold">AI Insight</span>
+</div>
+<p class="text-xs leading-relaxed text-on-surface-variant italic mb-4">
+                                "Add <b>'Orchestrated Kubernetes migration'</b> to increase matching score by 22%."
+                            </p>
+<button class="w-full py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary-container transition-colors">Apply Optimization</button>
+</div>
+</div>
+<!-- Background Articulations -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -z-10 opacity-60"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Bar -->
+<section class="py-16 bg-surface-container-low border-y border-outline-variant/30">
+<div class="container mx-auto px-margin-desktop max-w-container-max">
+<p class="text-center font-label-md text-on-surface-variant uppercase tracking-[0.3em] mb-12 opacity-80">Empowering Leaders at Scale</p>
+<div class="flex flex-wrap justify-center items-center gap-16 md:gap-32 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
+<span class="font-headline-md font-bold text-on-surface tracking-tighter scale-110">TECHGIANT</span>
+<span class="font-headline-md font-bold text-on-surface tracking-tighter scale-110">NEXUS_CORP</span>
+<span class="font-headline-md font-bold text-on-surface tracking-tighter scale-110">GLOBAL_LOGIC</span>
+<span class="font-headline-md font-bold text-on-surface tracking-tighter scale-110">STREAMLINE</span>
+<span class="font-headline-md font-bold text-on-surface tracking-tighter scale-110">DATA_FLOW</span>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 bg-surface" id="templates">
+<div class="container mx-auto px-margin-desktop max-w-container-max">
+<div class="text-center mb-20 max-w-3xl mx-auto space-y-4">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Scientific Precision for Modern Roles</h2>
+<p class="text-body-lg text-on-surface-variant">Our cognitive engine analyzes thousands of successful hires to give you an unfair advantage in the job market.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Large Feature: Keyword Optimization -->
+<div class="md:col-span-8 group relative overflow-hidden bg-white p-10 rounded-[32px] border border-outline-variant/50 hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-2xl">
+<div class="flex flex-col h-full justify-between gap-12 relative z-10">
+<div class="space-y-6">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center border border-primary/10">
+<span class="material-symbols-outlined text-primary text-3xl">key_visualizer</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Dynamic Semantic Matching</h3>
+<p class="text-body-md text-on-surface-variant max-w-xl">We don't just match keywords; we understand intent. Our AI re-engineers your professional narrative to align perfectly with specific company cultures and job requirements.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="bg-primary/5 text-primary px-4 py-2 rounded-full text-label-md font-bold border border-primary/10">Cloud Architecture</span>
+<span class="bg-primary/5 text-primary px-4 py-2 rounded-full text-label-md font-bold border border-primary/10">Full-Stack Engineering</span>
+<span class="bg-primary/5 text-primary px-4 py-2 rounded-full text-label-md font-bold border border-primary/10">Product Strategy</span>
+<span class="bg-primary/5 text-primary px-4 py-2 rounded-full text-label-md font-bold border border-primary/10">AI Ethics</span>
+</div>
+</div>
+<div class="absolute -right-16 -bottom-16 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-110 transition-all duration-1000">
+<span class="material-symbols-outlined text-[320px]">query_stats</span>
+</div>
+</div>
+<!-- Feature: Smart Formatting -->
+<div class="md:col-span-4 bg-primary p-10 rounded-[32px] text-on-primary flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden relative group">
+<div class="relative z-10 space-y-6">
+<div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg">Adaptive Layouts</h3>
+<p class="text-body-md opacity-80 leading-relaxed">Layouts that breathe. Our design system automatically adjusts whitespace and hierarchy based on your unique career density.</p>
+</div>
+<div class="mt-12 relative z-10">
+<img alt="Template Preview" class="rounded-2xl shadow-2xl border border-white/10 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ7bTKYh4oeAJh-9dZLtAgekTKTeOnsxhKFhX1n98acc5q6W93Nq2rZFVKcXZvQU3qzq3x8mYZZQBm0SwL60iO74SAQnQsITIovH7WY_RYxg4Tf8kbj53KeoA8_CeMgKUx4eYF5r1fXbItBZOsa6w3rODn14YGIrJ31mwCtD-jEs93hhrHEdvtmZvdIv8Y-bgZr35z6kW5l7XBhBm83thze4JQydJGiAdvOpeJrPJsQlfVLQMVO61zzafLQY-QXtj7aSu8SSFa-i63"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Feature: Auto-Summaries -->
+<div class="md:col-span-4 bg-surface-container-highest p-10 rounded-[32px] flex flex-col justify-between hover:shadow-xl transition-all border border-outline-variant/30 group">
+<div class="space-y-6">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">article</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cognitive Executive Summaries</h3>
+<p class="text-body-md text-on-surface-variant">Don't struggle with your pitch. ResumeIQ drafts compelling summaries based on your high-impact achievements.</p>
+</div>
+<div class="mt-10 p-6 bg-white/60 premium-blur rounded-2xl border border-white/40 shadow-sm space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[12px] uppercase font-bold text-primary tracking-widest">Synthesizing Profile...</span>
+</div>
+<div class="space-y-2">
+<div class="h-2 w-full bg-primary/10 rounded"></div>
+<div class="h-2 w-5/6 bg-primary/10 rounded"></div>
+<div class="h-2 w-4/6 bg-primary/10 rounded"></div>
+</div>
+</div>
+</div>
+<!-- Feature: Performance Analytics -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low p-10 rounded-[32px] border border-outline-variant/50 hover:shadow-2xl transition-all duration-500">
+<div class="flex flex-col md:flex-row gap-12 items-center h-full">
+<div class="flex-1 space-y-8">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Real-time Impact Analysis</h3>
+<p class="text-body-md text-on-surface-variant">Get a scientific "Resume Score" instantly. See exactly where your profile needs more tactical weight to attract executive recruiters.</p>
+<div class="space-y-4">
+<div class="w-full bg-white h-4 rounded-full overflow-hidden border border-outline-variant/20 shadow-inner">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 88%;"></div>
+</div>
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<span class="block text-label-sm text-on-surface-variant uppercase tracking-wider">Current Efficiency</span>
+<span class="text-headline-md font-bold text-primary">88/100</span>
+</div>
+<span class="text-label-sm font-bold text-on-surface-variant bg-white px-3 py-1 rounded-lg border border-outline-variant/30">Target: 95+</span>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0">
+<div class="relative">
+<div class="w-48 h-48 rounded-full border-[16px] border-primary/10 flex items-center justify-center relative bg-white/50 premium-blur">
+<span class="text-[64px] font-black text-primary">A+</span>
+<!-- Decorative gauge ticks -->
+<div class="absolute inset-0 rounded-full border border-primary/20 opacity-40 scale-110 border-dashed"></div>
+</div>
+<div class="absolute -top-4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-primary/20 animate-bounce">
+<span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Path to Success Section -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="container mx-auto px-margin-desktop max-w-container-max">
+<div class="flex flex-col lg:flex-row gap-24 items-center">
+<div class="w-full lg:w-1/2 space-y-16">
+<div class="space-y-6">
+<h2 class="font-headline-xl text-headline-xl text-on-surface leading-tight">Engineered for Velocity</h2>
+<p class="text-body-lg text-on-surface-variant max-w-lg">From legacy documents to market-leading profiles in three scientific steps.</p>
+</div>
+<div class="space-y-10">
+<!-- Step 1 -->
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 bg-primary text-on-primary rounded-2xl flex items-center justify-center font-headline-md shadow-lg group-hover:scale-110 transition-transform">01</div>
+<div class="pt-2">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Intelligence Intake</h4>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Import your history via PDF, LinkedIn, or JSON. Our deep-parsing engine extracts skills and achievements with unmatched fidelity.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 bg-primary text-on-primary rounded-2xl flex items-center justify-center font-headline-md shadow-lg group-hover:scale-110 transition-transform">02</div>
+<div class="pt-2">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Narrative Engineering</h4>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Define your target trajectory. Our AI re-sequences and optimizes your career data points to maximize role-specific relevance.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 bg-primary text-on-primary rounded-2xl flex items-center justify-center font-headline-md shadow-lg group-hover:scale-110 transition-transform">03</div>
+<div class="pt-2">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Market-Ready Export</h4>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Choose from verified ATS-optimized templates and export premium assets in high-fidelity PDF or Word formats.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="relative bg-primary/5 rounded-[64px] p-12 lg:p-20 border border-primary/10 overflow-hidden shadow-inner group">
+<img alt="Platform Dashboard" class="w-full h-auto rounded-3xl shadow-[0_40px_80px_-15px_rgba(0,0,0,0.3)] transition-all duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRXu4MEi_IMPoiscHVi8s2RJbwedkwkYrZNQ5m2LOsJYSryBRXTPgJOdNuB7_GLEvgsGrHrwL1knBKyJHbjjHrTrfha0w4cv0qCHq1dmFbU64UvBmQjPCNMf4LRnRqONGGx9yohpjvzXP5j5SF9awLSiFMbt0ea3QLOLr9WNcTTo-zyhKwoDJut8TxWv70qaiYDTooousRakxab9Nk8ndnnqS0E13wxPD9mPY3ja6gx_Cs3K8J5bXw2G-gqY97s97jo4quoZ0Ky3Cw"/>
+<!-- Floating Tech Particles -->
+<div class="absolute top-1/4 right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl animate-pulse"></div>
+<div class="absolute bottom-1/4 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Premium CTA Section -->
+<section class="py-24 relative">
+<div class="container mx-auto px-margin-desktop max-w-container-max">
+<div class="bg-inverse-surface rounded-[48px] p-16 lg:p-32 relative overflow-hidden text-center shadow-2xl">
+<!-- Background Decorative Pattern -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="relative z-10 space-y-12">
+<h2 class="font-headline-xl text-headline-xl text-white max-w-3xl mx-auto leading-tight">Ready to Engineer Your Professional Future?</h2>
+<p class="text-body-lg text-white/70 max-w-2xl mx-auto">Join the next generation of professionals securing roles at the world's most innovative organizations.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<button class="bg-primary text-on-primary px-12 py-6 rounded-2xl font-headline-md text-headline-md hover:shadow-[0_0_40px_rgba(69,30,187,0.4)] hover:-translate-y-1 active:scale-95 transition-all">Start For Free</button>
+<button class="bg-transparent border border-white/30 text-white px-12 py-6 rounded-2xl font-headline-md text-headline-md hover:bg-white/10 active:scale-95 transition-all">Explore Enterprise</button>
+</div>
+<div class="pt-6 space-y-2">
+<p class="text-white/40 font-label-sm text-label-sm uppercase tracking-widest">No credit card required • Free plan available • ATS Certified</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface dark:bg-surface-dim full-width border-t border-outline-variant dark:border-outline mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-12 px-margin-desktop max-w-container-max mx-auto gap-12">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline-md text-headline-md text-primary font-bold">ResumeIQ</span>
+<p class="text-on-surface-variant font-label-sm text-label-sm">© 2024 ResumeIQ Career Engineering. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline font-label-sm text-label-sm transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline font-label-sm text-label-sm transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline font-label-sm text-label-sm transition-opacity duration-200" href="#">Help Center</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline font-label-sm text-label-sm transition-opacity duration-200" href="#">API Documentation</a>
+</div>
+<div class="flex gap-5">
+<a aria-label="Share" class="h-12 w-12 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a aria-label="Email" class="h-12 w-12 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Simple entrance animation observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-12');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-12', 'ease-out');
+            observer.observe(el);
+        });
+    });
+</script>
+</body></html>

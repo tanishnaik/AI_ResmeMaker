@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResumeIQ | Template Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Geist+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Apply the theme configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#dce9ff",
+                    "on-primary": "#ffffff",
+                    "primary": "#451ebb",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface-container-low": "#eff4ff",
+                    "primary-fixed": "#e6deff",
+                    "error": "#ba1a1a",
+                    "outline": "#797586",
+                    "secondary": "#565e74",
+                    "background": "#f8f9ff",
+                    "on-tertiary-container": "#5fecb0",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "surface-dim": "#cbdbf5",
+                    "on-primary-fixed-variant": "#4723be",
+                    "primary-container": "#5d3fd3",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#1c0062",
+                    "on-surface": "#0b1c30",
+                    "outline-variant": "#c9c4d7",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#002113",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#d8ceff",
+                    "surface-tint": "#6042d6",
+                    "on-secondary-container": "#5c647a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary": "#004f34",
+                    "on-surface-variant": "#484554",
+                    "primary-fixed-dim": "#cabeff",
+                    "secondary-container": "#dae2fd",
+                    "inverse-surface": "#213145",
+                    "inverse-primary": "#cabeff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-background": "#0b1c30",
+                    "secondary-fixed": "#dae2fd",
+                    "tertiary-fixed": "#6ffbbe",
+                    "surface-bright": "#f8f9ff",
+                    "error-container": "#ffdad6",
+                    "surface": "#f8f9ff",
+                    "tertiary-container": "#006947",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "label-md": ["Geist"],
+                    "display": ["Geist"],
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-md": ["Geist"],
+                    "mono": ["Geist Mono"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for dark mode suite */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        
+        .template-card:hover .template-overlay { opacity: 1; }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-background dark:bg-surface-dim text-on-surface transition-colors duration-300">
+<div class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col gap-4 p-6 h-screen w-64 bg-surface-container-low dark:bg-surface-container border-r border-outline-variant dark:border-outline fixed left-0 top-0 overflow-y-auto">
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg font-black text-primary">ResumeIQ</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Professional Suite</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 text-secondary dark:text-secondary-fixed-dim px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-md text-label-md">Editor</span>
+</a>
+<a class="flex items-center gap-3 bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-lg px-4 py-2 font-bold scale-98 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Templates</span>
+</a>
+<a class="flex items-center gap-3 text-secondary dark:text-secondary-fixed-dim px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-md text-label-md">AI Enhancer</span>
+</a>
+<a class="flex items-center gap-3 text-secondary dark:text-secondary-fixed-dim px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-md text-label-md">History</span>
+</a>
+</nav>
+<button class="mt-auto w-full py-3 px-4 bg-primary text-on-primary rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Resume
+            </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pb-20 md:pb-0">
+<!-- TopNavBar Component -->
+<header class="sticky top-0 z-30 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-8">
+<div class="md:hidden font-headline-md text-headline-md font-bold text-primary">ResumeIQ</div>
+<div class="hidden lg:flex gap-6">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1" href="#">Templates</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Resumes</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low dark:bg-surface-container border border-outline-variant rounded-full py-2 px-10 text-label-md focus:outline-none focus:ring-2 focus:ring-primary/20 w-64 transition-all" placeholder="Search templates..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant" data-icon="search">search</span>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a business executive in a dark navy blue suit, set against a blurred modern office background. The lighting is crisp and cinematic, emphasizing a clean, high-contrast aesthetic consistent with the ResumeIQ brand. Deep blues and cool greys dominate the frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXopZjDs1B84IPbM2feFQt042Ob4WxHUN7k-nLYMNqKgQIqPrzgRAFQ1YCSSj86Vp_SAJD8uam6sIXlzBDyKwgkijzf_BsyJ5zwEpcgUR1EHSnR5YqLArGtXzerUTg7VyRAkX8brZjyx827HL5Z8OmvMInykr1SRK-7N4o5w0-eqQTAvKw1wpDM-_PB3Ah0goRxtOpNLZtHotVWqbMg0r0YZPfF-kUCDxcxvAwCFcBpbfuJiW_zkZjH2JF_-yMuc3xY2ZCXC2lJQlL"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-margin-desktop max-w-container-max mx-auto">
+<!-- Hero/CTA Section -->
+<section class="mb-12 relative overflow-hidden rounded-3xl bg-primary-container p-8 md:p-12 text-on-primary-container">
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block py-1 px-3 bg-on-tertiary-container text-tertiary font-label-sm text-label-sm rounded-full mb-4">NEW FEATURE</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">Unleash your potential with AI-Engineered designs.</h2>
+<p class="font-body-lg text-body-lg mb-8 opacity-90">Can't find the perfect match? Our AI can analyze your industry, seniority, and personal brand to generate a bespoke template just for you.</p>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            Create Custom AI Template
+                        </button>
+</div>
+<!-- Background aesthetic element -->
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none">
+<div class="w-full h-full rotate-12 translate-x-20 scale-150 border-[24px] border-on-primary-container/30 rounded-[100px]"></div>
+</div>
+</section>
+<!-- Filters & Controls -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+<div class="flex flex-wrap gap-3">
+<button class="px-4 py-2 rounded-full border border-primary text-primary font-label-md text-label-md bg-primary/10">All Templates</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary transition-colors">Tech &amp; IT</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary transition-colors">Creative Arts</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary transition-colors">Executive</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-primary transition-colors">Healthcare</button>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<select class="bg-surface-container-low dark:bg-surface-container border border-outline-variant rounded-lg py-2 px-4 text-label-md focus:outline-none focus:border-primary w-full md:w-48">
+<option>Experience Level</option>
+<option>Entry Level</option>
+<option>Mid-Senior</option>
+<option>Executive</option>
+</select>
+<button class="p-2 border border-outline-variant rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+</div>
+</div>
+<!-- Template Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Template 1: Modern -->
+<div class="template-card group relative flex flex-col bg-surface-container-lowest dark:bg-surface-container rounded-2xl border border-outline-variant overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-xl">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-resolution preview of a modern resume template featuring a clean two-column layout with deep violet accents. The design is crisp, using the Geist font family, with section headers like Experience and Education clearly demarcated. The background is a stark, professional dark mode slate with white and light-blue text highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHzbd6LhknHJx6bXisTslWqdQU_biz_ElDeT-Y08GXzcye3pYmXnCcF0IqqkZQLQOa6N3JrWpXg-W5nYbQJRDUEwzcQqMu_AasJ2nmgAgoQL8rUdCp0OASiaTfm0criM9V1-ohYPIYEL4PL8c8bs4i1-eZXLfQnZ2WJHW21qvB3xuhAo_1o4kS-6KVTBnj9LgupfG_jhoGZ9f0-3jE-nh4eeJQD7pXlu1DEgYJhQD5FL9nJAPuUQBQ8Y6NUPObqFiiczQUbUpeaY1Y"/>
+<div class="template-overlay absolute inset-0 glass-effect opacity-0 flex items-center justify-center gap-4 transition-opacity duration-300">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold">Use Template</button>
+<button class="bg-surface-container-lowest text-on-surface px-6 py-2 rounded-full font-bold">Preview</button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Meridian</h3>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-[10px] font-bold">POPULAR</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Perfect for tech leads and software engineers looking for a balanced, modern look.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">ATS-Optimized</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Dark UI</span>
+</div>
+</div>
+</div>
+<!-- Template 2: Creative -->
+<div class="template-card group relative flex flex-col bg-surface-container-lowest dark:bg-surface-container rounded-2xl border border-outline-variant overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-xl">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A creative resume template showcasing an asymmetrical grid layout with bold typography and emerald green accents. The design features a prominent skill-gauge section and a dark, moody background with vibrant contrasting elements. The aesthetic is tailored for designers and creative directors, emphasizing visual hierarchy and modern SaaS design patterns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHAjj_QrnL4ts3xVyb0oS6kKylrBflx897sT0iKvFjybBEvhTBhzMunlXsG9hr69CGZH4QY1JXvOYmzCEVdQYw2uzf-zjRXQH0aB0mkOzQoPxuCwWi9yERWvUY0wzfnUqeCBcT27zHi8ntlmyX88RGmiSs0YTqNMHEFGohBEcddIB5DfVM-oeRRQ3P2iZJaYTFFtLSgEUmsSHyYl9oOUXQoqI_gy7anrhyhQjwMhI3fLRb85_SXwHEF9vE684F6jCxX9VqH4O6Im8h"/>
+<div class="template-overlay absolute inset-0 glass-effect opacity-0 flex items-center justify-center gap-4 transition-opacity duration-300">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold">Use Template</button>
+<button class="bg-surface-container-lowest text-on-surface px-6 py-2 rounded-full font-bold">Preview</button>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Artisan Flux</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Highly visual layout designed for UX/UI designers and creative directors.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Creative</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Visual Focus</span>
+</div>
+</div>
+</div>
+<!-- Template 3: Executive -->
+<div class="template-card group relative flex flex-col bg-surface-container-lowest dark:bg-surface-container rounded-2xl border border-outline-variant overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-xl">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sophisticated executive resume template with a traditional yet refined structure. It uses serif headings and clean sans-serif body text. The layout is single-column, optimized for deep content and rich experience descriptions. The color palette is deep charcoal and gold accents, projecting authority and prestige in a professional dark-mode context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1cIx5K0hA3tXBJ96YJDx6d3W8jGl-LhTn3HFCxcvIGIH-TnQ07SCqzD8hcgF_BkcyzlKvEYMRlumEyNNSDVFd2LcRDjztDcOr5JlJBuZCPaagjHQ5mpOpYNS4N3AfxanyKqllCFEKyQpzcxmw0L6CrmNGbsNVoD28by8xup7ZefG1as1dTjuyt1AljAE_HzSvN01QZt-ehOlhEonGRmmVlAeU22sV9m2tlhZHkK48zgoMFf19aqnCPPvqxVwqqQ4Vlg7qrRFnCUMw"/>
+<div class="template-overlay absolute inset-0 glass-effect opacity-0 flex items-center justify-center gap-4 transition-opacity duration-300">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold">Use Template</button>
+<button class="bg-surface-container-lowest text-on-surface px-6 py-2 rounded-full font-bold">Preview</button>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">The Boardroom</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Sophisticated, text-focused design for C-suite and senior management roles.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Executive</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Classic</span>
+</div>
+</div>
+</div>
+<!-- Template 4: Minimalist -->
+<div class="template-card group relative flex flex-col bg-surface-container-lowest dark:bg-surface-container rounded-2xl border border-outline-variant overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-xl">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist resume template that prioritizes white space and ultra-clean typography. It utilizes the Geist Mono font for small details and labels. The layout is exceptionally airy, with only essential information displayed. The dark-mode version uses subtle shades of deep navy and slate to create a sense of focused calm and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOm2AodX4bgjvwySgVNckElVMikj8ppnWOWRrekXYxKXDDflYRitamHuuyMoqTs__ud26vd1e8XuGA_J3yE8I8lpo1x2d10cHeoR2y0v8xkcblqxme4MMtrtweAXzvXJUF5Alm13g0kN5mbF8I0KBpk7c_DU7zosmRU-8c305CYvyEzYBY77ZsDvRdClUdWzV8iQgFZ5m3dBTr7YjQY785RhNpmu2u_eJZD5T3KKPYia6dKsQZuSkYSTijOm8wo-sbciPNzY1Luhiy"/>
+<div class="template-overlay absolute inset-0 glass-effect opacity-0 flex items-center justify-center gap-4 transition-opacity duration-300">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold">Use Template</button>
+<button class="bg-surface-container-lowest text-on-surface px-6 py-2 rounded-full font-bold">Preview</button>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Pure Clarity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Zero distraction layout focusing solely on your achievements and data.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Minimal</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Focused</span>
+</div>
+</div>
+</div>
+<!-- Template 5: Academic -->
+<div class="template-card group relative flex flex-col bg-surface-container-lowest dark:bg-surface-container rounded-2xl border border-outline-variant overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-xl">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An academic CV template designed for research and educational excellence. It features dense text blocks for publications and research grants, maintaining readability through precise leading and 8px grid alignment. The design uses a muted blue and grey palette, looking professional and scholarly in a dark mode setting with sharp, clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdUeVNeD2YklkX27lsOGfwnKpDDtefXZSsLE_bidWZd0iNic6CMUXKpfkEeocvycw1C_4ASP2IZrzrqGrokoo5dp-oYTGR6t0RGC0eBFNsVKrYd_K5I0OPcA-X67ea0ZwZY4ckJVIjzJWIfg6BPBWx1WdG7uk6GK0fxQ1PjYUUNl-6QJXkiiCB8GAFGaEbeFK42iJYUEAWSiWNuT1m1E8Oqjxy-DHgxsz0kyMbzWz8Z-NBgHAarwhjudOP41l5mnU_zaith76tJXKh"/>
+<div class="template-overlay absolute inset-0 glass-effect opacity-0 flex items-center justify-center gap-4 transition-opacity duration-300">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold">Use Template</button>
+<button class="bg-surface-container-lowest text-on-surface px-6 py-2 rounded-full font-bold">Preview</button>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Scholarly Pro</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Multi-page optimized design specifically for PhDs, researchers, and educators.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Academic</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Multi-Page</span>
+</div>
+</div>
+</div>
+<!-- Template 6: Technical -->
+<div class="template-card group relative flex flex-col bg-surface-container-lowest dark:bg-surface-container rounded-2xl border border-outline-variant overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-xl">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A technical resume template with a focus on skill matrices and project links. It features a sidebar for GitHub repositories and technical stacks. The design incorporates small code-like icons and a monospace font for labels. The color palette is dominated by deep indigo and neon-blue accents, perfectly suited for a high-performance software engineer's profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzfcdZ2I7FdKBq2Sd2PjtJTK1oEeaWcx8YkwEZD-QPtbK1fZkor6zy3BdtuF70YK4FNGRaZUTqWgHIOHEvdvOpFkoQn-YzrsZrVD7pH_czAd1EB0fvytD9hv1C_LZeiYdCbrBbwaXhNMlbE5Q7oqGCAYAYsUF-W_UkZLIa-dzWlZ4QqeyefHH4kdZqJ6I569Az8T1oAul79Ff9SJrhlaClosJIv_hUVHBDPh5xJp233hyqTZOO1NUu0cuZdjXleTcXG8zp7Qm-gIBw"/>
+<div class="template-overlay absolute inset-0 glass-effect opacity-0 flex items-center justify-center gap-4 transition-opacity duration-300">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold">Use Template</button>
+<button class="bg-surface-container-lowest text-on-surface px-6 py-2 rounded-full font-bold">Preview</button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Architect</h3>
+<span class="bg-tertiary-container/20 text-tertiary-fixed-dim px-2 py-0.5 rounded text-[10px] font-bold">NEW</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Tech-heavy layout with project grids and dynamic skill matrices.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Tech</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-medium">Github-Sync</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 border border-outline-variant rounded-xl text-on-surface font-bold hover:bg-surface-container-high transition-colors">
+                        Load More Templates
+                    </button>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="mt-20 border-t border-outline-variant dark:border-outline bg-surface dark:bg-surface-dim">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-8 px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md text-primary">ResumeIQ</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2">© 2024 ResumeIQ Career Engineering. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity" href="#">Help Center</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline transition-opacity" href="#">API Documentation</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-effect border-t border-outline-variant h-16 flex items-center justify-around px-4">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="description" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="text-[10px] font-bold">Templates</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] font-medium">AI Suite</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+<!-- Floating Action Button (FAB) - For Mobile creation -->
+<button class="md:hidden fixed bottom-20 right-6 z-40 bg-primary text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<script>
+        // Micro-interaction for template cards
+        document.querySelectorAll('.template-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('scale-[1.01]');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Filter button active state logic
+        const filterButtons = document.querySelectorAll('.flex-wrap button');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary/10', 'border-primary', 'text-primary');
+                    b.classList.add('border-outline-variant', 'text-on-surface-variant');
+                });
+                btn.classList.remove('border-outline-variant', 'text-on-surface-variant');
+                btn.classList.add('bg-primary/10', 'border-primary', 'text-primary');
+            });
+        });
+    </script>
+</body></html>
