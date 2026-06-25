@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 const TOKEN_KEY = 'resumeiq_token';
 const LOCAL_USER_KEY = 'resumeiq_local_user';
 const LOCAL_STATE_KEY = 'resumeiq_local_state';
