@@ -1,16 +1,41 @@
-# React + Vite
+# AI_ResmeMaker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+AI-powered resume builder with a React/Vite frontend and Express/MongoDB backend.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `frontend/` - React app for resume editing, templates, preview/export, cover letters, auth, and dashboard.
+- `backend/` - Express API with MongoDB models for users, resumes, products, orders, and app state.
 
-## React Compiler
+## Run Locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install dependencies:
 
-## Expanding the Oxlint configuration
+```bash
+npm install
+cd frontend && npm install
+cd ../backend && npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Start backend:
+
+```bash
+cd backend
+npm.cmd run dev
+```
+
+Start frontend:
+
+```bash
+cd frontend
+npm.cmd run dev
+```
+
+Create `backend/.env` locally with:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+CLIENT_ORIGIN=http://localhost:5175
+JWT_SECRET=change-this-dev-secret
+```
