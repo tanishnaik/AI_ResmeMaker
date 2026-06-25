@@ -9,6 +9,12 @@
     "dev:backend": "npm --prefix backend run dev",
     "build": "npm --prefix frontend run build",
     "lint": "npm --prefix frontend run lint",
-    "start": "npm --prefix backend start"
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
   }
 }
