@@ -7,7 +7,7 @@
     "dev": "npm --prefix backend run dev",
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:backend": "npm --prefix backend run dev",
-    "build": "npm --prefix frontend ci && npm --prefix frontend run build",
+    "build": "echo Backend-only deploy: no frontend build required",
     "lint": "npm --prefix frontend run lint",
     "start": "node server.js"
   },
